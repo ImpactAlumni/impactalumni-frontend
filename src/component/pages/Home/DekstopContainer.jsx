@@ -3,16 +3,9 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
-  Sidebar,
   Visibility
 } from "semantic-ui-react";
 
@@ -20,13 +13,7 @@ import HomepageHeading from "./HomePageHeading";
 
 import "../../../App.css";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class DesktopContainer extends Component {
   state = {};
@@ -43,29 +30,32 @@ class DesktopContainer extends Component {
         <Visibility //untuk navbar biar fixed
           once={false}
           onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
-        >
+          onBottomPassedReverse={this.hideFixedMenu}>
           <Segment
             id="segment"
             inverted
             textAlign="center"
             style={{ minHeight: 700, padding: "1em 0em" }}
-            vertical
-          >
+            vertical>
             <Menu //navbar fixed
               fixed={fixed ? "top" : null}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
-              size="large"
-            >
+              size="large">
               <Container>
-                <Menu.Item as="a" active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as="a">Info</Menu.Item>
-                <Menu.Item as="a">Forum</Menu.Item>
-                <Menu.Item as="a">About Us</Menu.Item>
+                <Link to="/">
+                  <Menu.Item as="a">Home</Menu.Item>
+                </Link>
+                <Link to="/info">
+                  <Menu.Item as="a">Info</Menu.Item>
+                </Link>
+                <Link to="/forum">
+                  <Menu.Item as="a">Forum</Menu.Item>
+                </Link>
+                <Link to="/aboutus">
+                  <Menu.Item as="aboutus">About Us</Menu.Item>
+                </Link>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
                     Log in
@@ -74,8 +64,7 @@ class DesktopContainer extends Component {
                     as="a"
                     inverted={!fixed}
                     primary={fixed}
-                    style={{ marginLeft: "0.5em" }}
-                  >
+                    style={{ marginLeft: "0.5em" }}>
                     Sign Up
                   </Button>
                 </Menu.Item>
@@ -90,4 +79,9 @@ class DesktopContainer extends Component {
     );
   }
 }
+
+DesktopContainer.propTypes = {
+  children: PropTypes.node
+};
+
 export default DesktopContainer;

@@ -1,19 +1,10 @@
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 import {
   Button,
   Container,
-  Divider,
-  Grid,
   Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility
+  Icon
 } from "semantic-ui-react";
 
 //codingan dibawah
@@ -46,4 +37,9 @@ const HomepageHeading = ({ mobile }) => (
     </Button>
   </Container>
 );
+
+HomepageHeading.propTypes = {
+  mobile: PropTypes.bool
+};
+
 export default HomepageHeading;
