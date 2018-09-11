@@ -1,0 +1,23 @@
+/* .homepage-heading {
+  background-color: grey;
+}
+
+.dekstop-container {
+  background-color: aqua;
+} */
+
+/* #lity {
+  background-color: antiquewhite;
+} */
+
+#segment {
+  background-image: url(./component/img/headerPic4.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#menu {
+  border: none;
+}
