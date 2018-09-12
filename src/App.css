@@ -1,16 +1,11 @@
-/* .homepage-heading {
-  background-color: grey;
+/* Navbar ==========================================================*/
+.navbar {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.dekstop-container {
-  background-color: aqua;
-} */
-
-/* #lity {
-  background-color: antiquewhite;
-} */
-
-#segment {
+/* Header ==========================================================*/
+#header {
   background-image: url(./img/headerPic4.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -18,6 +13,33 @@
   background-size: cover;
 }
 
-#menu {
-  border: none;
+.header-kata1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 60px;
+  margin-top: 200px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.header-kata2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  margin-top: 100px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* Middlebar ======================================================*/
+.middle1 {
+  padding-bottom: 10px;
+}
+
+.middle2 {
+  margin-bottom: 100px;
+}
+
+#middle3 {
+  background-image: url(./img//container2.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
