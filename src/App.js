@@ -8,13 +8,18 @@ import {
   Container,
   Image,
   Header,
-  List
+  List,
+  Modal,
+  Icon
 } from "semantic-ui-react";
 
 import Home from "./pages/home.jsx";
 import Info from "./pages/info";
 import Gallery from "./pages/gallery";
 import AboutUs from "./pages/aboutus";
+import LoginForm from "./pages/login";
+
+import impactlogo from "./img/impactlogo.jpeg";
 
 class App extends Component {
   state = { activeItem: "home" };
@@ -30,6 +35,7 @@ class App extends Component {
             <div className="navbar">
               <Menu secondary>
                 <Menu.Item
+                  icon="home"
                   as={Link}
                   to="/"
                   name="home"
@@ -37,6 +43,7 @@ class App extends Component {
                   onClick={this.handleItemClick}
                 />
                 <Menu.Item
+                  icon="book"
                   as={Link}
                   to="/info"
                   name="Info"
@@ -44,6 +51,7 @@ class App extends Component {
                   onClick={this.handleItemClick}
                 />
                 <Menu.Item
+                  icon="photo"
                   as={Link}
                   to="/gallery"
                   name="Gallery"
@@ -51,6 +59,7 @@ class App extends Component {
                   onClick={this.handleItemClick}
                 />
                 <Menu.Item
+                  icon="users"
                   as={Link}
                   to="/aboutus"
                   name="About Us"
@@ -58,11 +67,8 @@ class App extends Component {
                   onClick={this.handleItemClick}
                 />
                 <Menu.Menu position="right">
-                  <Button inverted color="red">
-                    Log In
-                  </Button>
-                  <Button inverted color="red">
-                    Sign Up
+                  <Button inverted color="red" as={Link} to="/login">
+                    Log In / Sign Up
                   </Button>
                 </Menu.Menu>
               </Menu>
@@ -72,6 +78,7 @@ class App extends Component {
           <Route path="/info" component={Info} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/aboutus" component={AboutUs} />
+          <Route path="/login" component={LoginForm} />
         </div>
       </Router>
     );
