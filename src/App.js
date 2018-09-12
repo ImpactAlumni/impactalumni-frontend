@@ -61,6 +61,9 @@ class App extends Component {
                   <Button inverted color="red">
                     Log In
                   </Button>
+                  <Button inverted color="red">
+                    Sign Up
+                  </Button>
                 </Menu.Menu>
               </Menu>
             </div>
@@ -75,7 +78,7 @@ class App extends Component {
             vertical
           >
             <div className="header-kata1">console.log("impactAlumni")</div>
-            <div className="header-kata2">Coding Means Community :)</div>
+            <div className="header-kata2">Coding means community :)</div>
           </Segment>
 
           {/* middle1 */}
@@ -160,7 +163,7 @@ class App extends Component {
 
           {/* middle4 */}
           <Container>
-            <Segment style={{ padding: "8em 0em" }} vertical>
+            <Segment style={{ padding: "6em 0em" }} vertical>
               <Grid container stackable verticalAlign="middle">
                 <Grid.Row>
                   <Grid.Column width={8}>
