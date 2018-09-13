@@ -1,3 +1,4 @@
+/* HOME */
 /* Navbar ==========================================================*/
 .navbar {
   margin-top: 10px;
@@ -42,4 +43,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* About Us */
+.aboutus {
+  margin-top: 50px;
+}
+
+.aboutus-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#aboutus-footer {
+  margin-top: 50px;
 }

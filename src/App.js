@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Menu, Button, Container } from "semantic-ui-react";
 
-import Home from "./pages/home.jsx";
+import Home from "./pages/home";
 import Info from "./pages/info";
 import Gallery from "./pages/gallery";
 import AboutUs from "./pages/aboutus";
