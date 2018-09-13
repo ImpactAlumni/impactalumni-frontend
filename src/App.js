@@ -1,25 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {
-  Menu,
-  Segment,
-  Grid,
-  Button,
-  Container,
-  Image,
-  Header,
-  List,
-  Modal,
-  Icon
-} from "semantic-ui-react";
+import { Menu, Button, Container } from "semantic-ui-react";
 
 import Home from "./pages/home.jsx";
 import Info from "./pages/info";
 import Gallery from "./pages/gallery";
 import AboutUs from "./pages/aboutus";
 import LoginForm from "./pages/login";
-
-import impactlogo from "./img/impactlogo.jpeg";
 
 class App extends Component {
   state = { activeItem: "home" };
