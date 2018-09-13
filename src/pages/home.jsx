@@ -192,6 +192,17 @@ class Home extends Component {
               verticalAlign="middle"
             >
               <Grid.Row>
+                <Grid.Column floated="right" width={6}>
+                  <Image
+                    bordered="bordered"
+                    rounded="rounded"
+                    size="large"
+                    src={programmerGif}
+                    style={{
+                      width: "70%"
+                    }}
+                  />
+                </Grid.Column>
                 <Grid.Column width={8}>
                   <Header
                     as="h3"
@@ -211,17 +222,6 @@ class Home extends Component {
                     very fast. Our fellow programmers help each other solve
                     problems
                   </p>
-                </Grid.Column>
-                <Grid.Column floated="right" width={6}>
-                  <Image
-                    bordered="bordered"
-                    rounded="rounded"
-                    size="large"
-                    src={programmerGif}
-                    style={{
-                      width: "70%"
-                    }}
-                  />
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row />
