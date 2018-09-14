@@ -29,7 +29,7 @@ const SignUpForm = () => (
               placeholder="E-mail address"
             />
             <Button color="blue" fluid size="large">
-              Sign Up
+              Request Permission
             </Button>
           </Segment>
         </Form>
