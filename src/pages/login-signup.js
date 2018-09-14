@@ -8,7 +8,9 @@ import {
   Message,
   Segment,
   Container,
-  List
+  List,
+  Modal,
+  Icon
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
@@ -75,15 +77,23 @@ class LoginForm extends Component {
                           iconPosition="left"
                           placeholder="E-mail address"
                         />
-                        <Button
-                          color="blue"
-                          fluid
-                          size="large"
-                          as={Link}
-                          to="/newpassword"
+                        <Modal
+                          trigger={
+                            <Button color="blue" fluid size="large">
+                              Request Permission
+                            </Button>
+                          }
+                          basic
+                          size="small"
                         >
-                          Request Permission
-                        </Button>
+                          <Header icon="mail" content="Sent To Your Email!" />
+                          <Modal.Content>
+                            <p>
+                              Check your email, we have sent an access link so
+                              you can join our website
+                            </p>
+                          </Modal.Content>
+                        </Modal>
                       </Segment>
                     </Form>
                     <Message>
