@@ -38,7 +38,7 @@
 }
 
 #middle3 {
-  background-image: url(./img//container2.jpeg);
+  background-image: url(./img/container2.1.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,4 +57,17 @@
 
 #aboutus-footer {
   margin-top: 50px;
+}
+
+/* new password */
+#background-newPassword {
+  background-image: url(./img/login2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.newPassword-form {
+  margin-top: 100px;
 }

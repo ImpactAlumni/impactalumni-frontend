@@ -7,6 +7,7 @@ import Info from "./pages/info";
 import Gallery from "./pages/gallery";
 import AboutUs from "./pages/aboutus";
 import LoginForm from "./pages/login";
+import newPassword from "./pages/newPassword";
 
 class App extends Component {
   state = { activeItem: "home" };
@@ -66,6 +67,7 @@ class App extends Component {
           <Route path="/gallery" component={Gallery} />
           <Route path="/aboutus" component={AboutUs} />
           <Route path="/login" component={LoginForm} />
+          <Route path="/newpassword" component={newPassword} />
         </div>
       </Router>
     );

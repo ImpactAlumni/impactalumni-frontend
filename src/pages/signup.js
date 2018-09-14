@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Form, Grid, Header, Segment } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const SignUpForm = () => (
   <div className="signup-form">
@@ -28,7 +29,7 @@ const SignUpForm = () => (
               iconPosition="left"
               placeholder="E-mail address"
             />
-            <Button color="blue" fluid size="large">
+            <Button color="blue" fluid size="large" as={Link} to="/newpassword">
               Request Permission
             </Button>
           </Segment>
