@@ -6,57 +6,51 @@ import {
   Header,
   Segment,
   Container,
-  List
+  List,
+  Image
 } from "semantic-ui-react";
 
 import "../App.css";
+import impactlogo from "../img/impactlogo.jpeg";
 
 const newPassword = () => (
   <div>
+    <div className="newPassword-form">
+      <Grid
+        textAlign="center"
+        style={{ height: "100%" }}
+        verticalAlign="middle"
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Header as="h2" color="red" textAlign="center">
+            <Image src={impactlogo} />
+            Activate to your account
+          </Header>
+          <Form size="large">
+            <Segment stacked>
+              <Form.Input
+                fluid
+                icon="key"
+                iconPosition="left"
+                placeholder="New Password"
+              />
+              <Form.Input
+                fluid
+                icon="key"
+                iconPosition="left"
+                placeholder="Confim Password"
+              />
+              <Button color="red" fluid size="large">
+                New Password
+              </Button>
+            </Segment>
+          </Form>
+        </Grid.Column>
+      </Grid>
+    </div>
+
     <Segment
-      id="background-newPassword"
-      inverted="inverted"
-      textAlign="center"
-      style={{
-        minHeight: 600,
-        padding: "1em 0em"
-      }}
-      vertical="vertical"
-    >
-      <div className="newPassword-form">
-        <Grid
-          textAlign="center"
-          style={{ height: "100%" }}
-          verticalAlign="middle"
-        >
-          <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as="h2" color="red" textAlign="center">
-              Activate to your account
-            </Header>
-            <Form size="large">
-              <Segment stacked>
-                <Form.Input
-                  fluid
-                  icon="key"
-                  iconPosition="left"
-                  placeholder="New Password"
-                />
-                <Form.Input
-                  fluid
-                  icon="key"
-                  iconPosition="left"
-                  placeholder="Confim Password"
-                />
-                <Button color="red" fluid size="large">
-                  New Password
-                </Button>
-              </Segment>
-            </Form>
-          </Grid.Column>
-        </Grid>
-      </div>
-    </Segment>
-    <Segment
+      id="newPassword-footer"
       inverted="inverted"
       vertical="vertical"
       style={{

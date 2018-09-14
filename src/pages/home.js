@@ -4,7 +4,6 @@ import "semantic-ui-css/semantic.min.css";
 import "../App.css";
 
 import {
-  Menu,
   Segment,
   Grid,
   Button,
@@ -170,13 +169,18 @@ class Home extends Component {
         <Segment
           id="middle3"
           inverted="inverted"
-          textAlign="center"
+          textAlign="left"
           style={{
             minHeight: 600,
             padding: "1em 0em"
           }}
           vertical="vertical"
-        />{" "}
+        >
+          {" "}
+          <div className="middle3-kata">"First, Solve The Problem.</div>
+          <div className="middle3-kata1">Then, Write The Code"</div>
+          <div className="middle3-kata2">- John Jhonson</div>
+        </Segment>
         {/* middle4 */}
         <Container>
           <Segment
