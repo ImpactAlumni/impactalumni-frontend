@@ -32,8 +32,10 @@ class Home extends Component {
           }}
           vertical="vertical"
         >
-          <div className="header-kata1">console.log("impactAlumni")</div>
-          <div className="header-kata2">Coding means community :)</div>
+          <Container>
+            <div className="header-kata1">console.log("impactAlumni")</div>
+            <div className="header-kata2">Coding means community :)</div>
+          </Container>
         </Segment>
         {/* middle1 */}
         <Container>

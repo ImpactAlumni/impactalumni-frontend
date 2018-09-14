@@ -6,7 +6,7 @@ import Home from "./pages/home";
 import Info from "./pages/info";
 import Gallery from "./pages/gallery";
 import AboutUs from "./pages/aboutus";
-import LoginForm from "./pages/login";
+import LoginForm from "./pages/login-signup";
 import newPassword from "./pages/newPassword";
 
 class App extends Component {
