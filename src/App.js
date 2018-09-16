@@ -67,7 +67,7 @@ class App extends Component {
           <Route path="/gallery" component={Gallery} />
           <Route path="/aboutus" component={AboutUs} />
           <Route path="/login" component={LoginForm} />
-          <Route path="/newpassword" component={newPassword} />
+          <Route path="/signup/:token" component={newPassword} />
         </div>
       </Router>
     );
