@@ -112,4 +112,15 @@
 
 .batch-logo1 {
   margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* profileStudent /////////////////////////////////////////////////// */
+.profileStudent-title {
+  text-align: center;
+}
+
+.profileStudent-isi {
+  margin-top: 50px;
 }

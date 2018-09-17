@@ -9,15 +9,32 @@ import {
   Segment,
   Container,
   List,
-  Modal,
-  Icon
+  Modal
 } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import impactlogo from "../img/impactlogo.jpeg";
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input_email: "",
+      input_password: ""
+    };
+  }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
   render() {
+    const { input_email, input_password } = this.state;
+    if (this.props.isAuthenticated === true) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="login-form">
         <Container>
@@ -36,19 +53,32 @@ class LoginForm extends Component {
                     <Form size="large">
                       <Segment stacked>
                         <Form.Input
+                          name="input_email"
                           fluid
                           icon="user"
                           iconPosition="left"
                           placeholder="E-mail address"
+                          value={this.state.input_email}
+                          onChange={this.handleChange}
                         />
                         <Form.Input
+                          name="input_password"
                           fluid
                           icon="lock"
                           iconPosition="left"
                           placeholder="Password"
                           type="password"
+                          value={this.state.input_password}
+                          onChange={this.handleChange}
                         />
-                        <Button color="red" fluid size="large">
+                        <Button
+                          color="red"
+                          fluid
+                          size="large"
+                          onClick={() => {
+                            this.props.login(input_email, input_password);
+                          }}
+                        >
                           Login
                         </Button>
                       </Segment>

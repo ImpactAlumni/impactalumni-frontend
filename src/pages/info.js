@@ -1,104 +1,51 @@
-import React from "react";
-import { Grid, Image, Container, Card, Icon } from "semantic-ui-react";
+import React, { Component } from "react";
+import {
+  Grid,
+  Image,
+  Container,
+  Card,
+  Icon,
+  Modal,
+  Button,
+  Header,
+  List
+} from "semantic-ui-react";
 import "../App.css";
+import moment from "moment";
+import axios from "axios";
+import BatchCard from "./batchCard";
 
-import batch1 from "../img/batch1.svg";
-import batch2 from "../img/batch2.svg";
-import batch3 from "../img/batch3.svg";
-import batch4 from "../img/batch4.svg";
+class Info extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { batches: [] };
+  }
 
-const GridExampleVerticallyDivided = () => (
-  <Container>
-    <div>
-      <h1 className="alumni-title">Batch</h1>
-    </div>
-    <div className="batch-logo1">
-      <Grid divided="vertically">
-        <Grid.Row columns={4}>
-          <Grid.Column>
-            <Card>
-              <Image src={batch1} />
-              <Card.Content>
-                <Card.Header>Matthew</Card.Header>
-                <Card.Meta>
-                  <span className="date">Joined in 2015</span>
-                </Card.Meta>
-                <Card.Description>
-                  Matthew is a musician living in Nashville.
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <a>
-                  <Icon name="user" />
-                  22 Friends
-                </a>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-          <Grid.Column>
-            <Card>
-              <Image src={batch2} />
-              <Card.Content>
-                <Card.Header>Matthew</Card.Header>
-                <Card.Meta>
-                  <span className="date">Joined in 2015</span>
-                </Card.Meta>
-                <Card.Description>
-                  Matthew is a musician living in Nashville.
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <a>
-                  <Icon name="user" />
-                  22 Friends
-                </a>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-          <Grid.Column>
-            <Card>
-              <Image src={batch3} />
-              <Card.Content>
-                <Card.Header>Matthew</Card.Header>
-                <Card.Meta>
-                  <span className="date">Joined in 2015</span>
-                </Card.Meta>
-                <Card.Description>
-                  Matthew is a musician living in Nashville.
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <a>
-                  <Icon name="user" />
-                  22 Friends
-                </a>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-          <Grid.Column>
-            <Card>
-              <Image src={batch4} />
-              <Card.Content>
-                <Card.Header>Matthew</Card.Header>
-                <Card.Meta>
-                  <span className="date">Joined in 2015</span>
-                </Card.Meta>
-                <Card.Description>
-                  Matthew is a musician living in Nashville.
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <a>
-                  <Icon name="user" />
-                  22 Friends
-                </a>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </div>
-  </Container>
-);
+  componentDidMount = async () => {
+    await axios.get(`http://localhost:3000/batches`).then(res => {
+      console.log(res.data.data);
+      this.setState({ batches: res.data.data });
+    });
+  };
 
-export default GridExampleVerticallyDivided;
+  render() {
+    return (
+      <Container>
+        <div>
+          <h1 className="alumni-title">Batch</h1>
+        </div>
+        <div className="batch-logo1">
+          <Grid centered divided="vertically">
+            <Grid.Row columns={3}>
+              {this.state.batches.map(batch => (
+                <BatchCard data={batch} />
+              ))}
+            </Grid.Row>
+          </Grid>
+        </div>
+      </Container>
+    );
+  }
+}
+
+export default Info;
