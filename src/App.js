@@ -10,6 +10,7 @@ import AboutUs from "./pages/aboutus";
 import LoginForm from "./pages/login-signup";
 import newPassword from "./pages/newPassword";
 import profileStudent from "./pages/profileStudent";
+import job_detail from "./pages/job_detail";
 
 class App extends Component {
   state = { activeItem: "home", isAuthenticated: false };
@@ -73,6 +74,16 @@ class App extends Component {
                   active={activeItem === "Gallery"}
                   onClick={this.handleItemClick}
                 />
+                {this.state.isAuthenticated ? (
+                  <Menu.Item
+                    icon="handshake"
+                    as={Link}
+                    to="/job_detail"
+                    name="Job Details"
+                    active={activeItem === "Job Details"}
+                    onClick={this.handleItemClick}
+                  />
+                ) : null}
                 <Menu.Item
                   icon="users"
                   as={Link}
@@ -117,6 +128,7 @@ class App extends Component {
           />
           <Route path="/signup/:token" component={newPassword} />
           <Route path="/profile/:id" component={profileStudent} />
+          <Route path="/job_detail" component={job_detail} />
         </div>
       </Router>
     );

@@ -61,6 +61,7 @@ class newPassword extends Component {
                     icon="key"
                     iconPosition="left"
                     placeholder="New Password"
+                    type="password"
                   />
                   <Form.Input
                     fluid
@@ -69,6 +70,7 @@ class newPassword extends Component {
                     onChange={this.handleOnChange}
                     iconPosition="left"
                     placeholder="Confim Password"
+                    type="password"
                   />
                   <Button
                     color="red"
@@ -83,7 +85,6 @@ class newPassword extends Component {
             </Grid.Column>
           </Grid>
         </div>
-
         <Segment
           id="newPassword-footer"
           inverted="inverted"

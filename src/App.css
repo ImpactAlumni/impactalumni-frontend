@@ -107,13 +107,17 @@
 /* INFO ///////////////////////////////////////////////////////////// */
 .alumni-title {
   text-align: center;
-  margin-top: 100px;
 }
 
 .batch-logo1 {
   margin-top: 50px;
   margin-left: 100px;
   margin-right: 100px;
+  margin-bottom: 100px;
+}
+
+.info-menu {
+  margin-top: 50px;
 }
 
 /* profileStudent /////////////////////////////////////////////////// */
@@ -122,5 +126,10 @@
 }
 
 .profileStudent-isi {
+  margin-top: 50px;
+}
+
+/* profileStudent ////////////////////////////////////////////////////*/
+.studentProfile {
   margin-top: 50px;
 }
