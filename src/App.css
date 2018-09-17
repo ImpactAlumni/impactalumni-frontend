@@ -79,13 +79,13 @@
   text-align: center;
 }
 
-#aboutus-footer {
-  margin-top: 100px;
+.aboutus-isi {
+  margin-bottom: 100px;
 }
-
 /* new password /////////////////////////////////////////////////////*/
 .newPassword-form {
   margin-top: 100px;
+  margin-bottom: 200px;
 }
 
 #newPassword-footer {
@@ -100,8 +100,8 @@
   margin-top: 100px;
 }
 
-#login-footer {
-  margin-top: 200px;
+.loginSignup-isi {
+  margin-bottom: 100px;
 }
 
 /* INFO ///////////////////////////////////////////////////////////// */
@@ -120,6 +120,14 @@
   margin-top: 50px;
 }
 
+.partner {
+  margin-top: 200px;
+}
+
+.partner-title {
+  text-align: center;
+}
+
 /* profileStudent /////////////////////////////////////////////////// */
 .profileStudent-title {
   text-align: center;
@@ -127,6 +135,7 @@
 
 .profileStudent-isi {
   margin-top: 50px;
+  margin-bottom: 150px;
 }
 
 /* profileStudent ////////////////////////////////////////////////////*/

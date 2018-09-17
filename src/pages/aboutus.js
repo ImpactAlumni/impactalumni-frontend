@@ -21,6 +21,8 @@ import hesti2 from "../img/hesti2.jpg";
 import wahyu1 from "../img/wahyu1.jpg";
 import wahyu2 from "../img/wahyu2.jpg";
 
+import Footer from "./footer";
+
 class AboutUs extends Component {
   state = {};
   render() {
@@ -30,7 +32,7 @@ class AboutUs extends Component {
           <h1>Our Team Project</h1>
         </div>
         <div>
-          <Container>
+          <Container className="aboutus-isi">
             <Grid divided="vertically">
               <Grid.Row columns={4}>
                 <Grid.Column>
@@ -120,48 +122,7 @@ class AboutUs extends Component {
               </Grid.Row>
             </Grid>
           </Container>
-          <Segment
-            id="aboutus-footer"
-            inverted="inverted"
-            vertical="vertical"
-            style={{
-              padding: "5em 0em"
-            }}
-          >
-            <Container>
-              <Grid divided="divided" inverted="inverted" stackable="stackable">
-                <Grid.Row>
-                  <Grid.Column width={3}>
-                    <Header inverted="inverted" as="h4" content="About" />
-                    <List link="link" inverted="inverted">
-                      <List.Item as="a">Sitemap</List.Item>
-                      <List.Item as="a">Contact Us</List.Item>
-                      <List.Item as="a">Religious Ceremonies</List.Item>
-                      <List.Item as="a">Gazebo Plans</List.Item>
-                    </List>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Header inverted="inverted" as="h4" content="Services" />
-                    <List link="link" inverted="inverted">
-                      <List.Item as="a">Banana Pre-Order</List.Item>
-                      <List.Item as="a">DNA FAQ</List.Item>
-                      <List.Item as="a">How To Access</List.Item>
-                      <List.Item as="a">Favorite X-Men</List.Item>
-                    </List>
-                  </Grid.Column>
-                  <Grid.Column width={7}>
-                    <Header as="h4" inverted="inverted">
-                      Footer Header
-                    </Header>
-                    <p>
-                      Extra space for a call to action inside the footer that
-                      could help re-engage users.
-                    </p>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Container>
-          </Segment>
+          <Footer />
         </div>
       </div>
     );
