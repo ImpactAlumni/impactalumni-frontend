@@ -23,6 +23,7 @@ class BatchCard extends Component {
     await axios
       .get(`http://localhost:3000/batches/${this.props.data.id}/students`)
       .then(data => {
+        console.log(data);
         this.setState({ students: data.data.data.students });
       });
   };
@@ -81,7 +82,7 @@ class BatchCard extends Component {
                 <List.Item>
                   <Image
                     avatar
-                    src="https://react.semantic-ui.com/images/avatar/small/helen.jpg"
+                    src={`http://localhost:3000/assets/foto/${student.foto}`}
                   />
                   <List.Content>
                     <List.Header as={Link} to={"/profile/" + student.id}>

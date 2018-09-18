@@ -41,7 +41,11 @@ class JobsList extends Component {
       <div>
         <Grid>
           <Grid.Column width={4}>
-            <Image src="https://react.semantic-ui.com/images/wireframe/image.png" />
+            <Image
+              src={`http://localhost:3000/assets/partner-logo/${
+                this.state.company.logo
+              }`}
+            />
           </Grid.Column>
           <Grid.Column width={9}>
             <Accordion styled>

@@ -42,7 +42,11 @@ class profileStudent extends Component {
           <div className="profileStudent-isi">
             <Grid>
               <Grid.Column width={4}>
-                <Image src="/images/wireframe/image.png" />
+                <Image
+                  src={`http://localhost:3000/assets/foto/${
+                    this.state.profile.foto
+                  }`}
+                />
               </Grid.Column>
               <Grid.Column width={9}>
                 <Table basic="very" celled collapsing>
