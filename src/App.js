@@ -112,19 +112,19 @@ class App extends Component {
                   active={activeItem === "About Us"}
                   onClick={this.handleItemClick}
                 />
-                {this.state.isAuthenticated ? (
-                  <Label position="right">
-                    <Image
-                      spaced="right"
-                      src={`http://localhost:3000/assets/foto/${
-                        this.state.profile.foto
-                      }`}
-                    />
-                    Wellcome :) {this.state.profile.fullName}
-                  </Label>
-                ) : null}
 
                 <Menu.Menu position="right">
+                  {this.state.isAuthenticated ? (
+                    <Label position="right">
+                      <Image
+                        spaced="right"
+                        src={`http://localhost:3000/assets/foto/${
+                          this.state.profile.foto
+                        }`}
+                      />
+                      Wellcome :) {this.state.profile.fullName}
+                    </Label>
+                  ) : null}
                   {this.state.isAuthenticated ? (
                     <Button
                       inverted
