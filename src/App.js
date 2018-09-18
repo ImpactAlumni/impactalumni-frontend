@@ -35,23 +35,23 @@ class App extends Component {
       });
   };
 
-   componentWillMount = async () => {
+  componentWillMount = async () => {
     if (localStorage.getItem("token")) {
       await axios
-      .post(`http://localhost:3000/students/decode_token`, {
-        token: localStorage.getItem("token")
-      })
-      .then(async res => {
-        console.log(res.data)
-        if (res.data.user) {
-          await this.setState({
-            isAuthenticated: true,
-            profile: res.data.user
-          });
-        }
-      });
+        .post(`http://localhost:3000/students/decode_token`, {
+          token: localStorage.getItem("token")
+        })
+        .then(async res => {
+          console.log(res.data);
+          if (res.data.user) {
+            await this.setState({
+              isAuthenticated: true,
+              profile: res.data.user
+            });
+          }
+        });
     }
-  }
+  };
 
   logout = () => {
     localStorage.removeItem("token");
@@ -113,7 +113,7 @@ class App extends Component {
                   onClick={this.handleItemClick}
                 />
                 {this.state.isAuthenticated ? (
-                  <Label as="a" position="right">
+                  <Label position="right">
                     <Image
                       spaced="right"
                       src={`http://localhost:3000/assets/foto/${
