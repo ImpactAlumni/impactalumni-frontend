@@ -7,7 +7,10 @@ import {
   Icon,
   List,
   Divider,
-  Popup
+  Popup,
+  Button,
+  Modal,
+  Header
 } from "semantic-ui-react";
 import React, { Component } from "react";
 
@@ -141,46 +144,24 @@ class JobsList extends Component {
               <Accordion.Content active={activeIndex === 5}>
                 <p>{this.props.data.minimumExperience}</p>
               </Accordion.Content>
-
-              {/* <Accordion.Title
-                active={activeIndex === 6}
-                index={6}
-                onClick={this.handleClick}
-              >
-                <Icon name="dropdown" />
-                Company Name
-              </Accordion.Title>
-              <Accordion.Content active={activeIndex === 6}>
-                <p>{this.state.company.companyName}</p>
-              </Accordion.Content>
-
-              <Accordion.Title
-                active={activeIndex === 7}
-                index={7}
-                onClick={this.handleClick}
-              >
-                <Icon name="dropdown" />
-                Company Address
-              </Accordion.Title>
-              <Accordion.Content active={activeIndex === 7}>
-                <p>{this.state.company.companyAddress}</p>
-              </Accordion.Content>
-
-              <Accordion.Title
-                active={activeIndex === 8}
-                index={8}
-                onClick={this.handleClick}
-              >
-                <Icon name="dropdown" />
-                Company Industry
-              </Accordion.Title>
-              <Accordion.Content active={activeIndex === 8}>
-                <p>{this.state.company.companyIndustry}</p>
-              </Accordion.Content> */}
             </Accordion>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph.png" />
+            <Modal
+              trigger={
+                <Button animated color="blue">
+                  <Button.Content visible>Apply For Job</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name="arrow right" />
+                  </Button.Content>
+                </Button>
+              }
+              basic
+              size="small"
+            >
+              <Header icon="check circle" content="Thanks For Applied 😉" />
+              <Modal.Actions />
+            </Modal>
           </Grid.Column>
         </Grid>
         <Divider section />
