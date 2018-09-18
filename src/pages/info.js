@@ -4,6 +4,7 @@ import "../App.css";
 
 import axios from "axios";
 import BatchCard from "./batchCard";
+import Partner from "./partner";
 
 import Footer from "./footer";
 
@@ -38,27 +39,7 @@ class Info extends Component {
           </div>
         </Container>
         <Container>
-          <div className="partner">
-            <h1 className="partner-title">Partner</h1>
-          </div>
-          <div className="partnerIsi">
-            <Grid divided="vertically">
-              <Grid.Row columns={4}>
-                <Grid.Column>
-                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-                </Grid.Column>
-                <Grid.Column>
-                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-                </Grid.Column>
-                <Grid.Column>
-                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-                </Grid.Column>
-                <Grid.Column>
-                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </div>
+          <Partner />
         </Container>
         <Footer />
       </div>
