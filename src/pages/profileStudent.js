@@ -49,17 +49,19 @@ class profileStudent extends Component {
                     this.state.profile.foto
                   }`}
                 />
-                <Button
-                  inverted
-                  color="red"
-                  style={{ width: "45%" }}
-                  animated="vertical"
-                >
-                  <Button.Content hidden>
-                    <Icon name="edit" />
-                  </Button.Content>
-                  <Button.Content visible>Edit Profile</Button.Content>
-                </Button>
+                {this.props.isAuthenticated ? (
+                  <Button
+                    inverted
+                    color="red"
+                    style={{ width: "45%" }}
+                    animated="vertical"
+                  >
+                    <Button.Content hidden>
+                      <Icon name="edit" />
+                    </Button.Content>
+                    <Button.Content visible>Edit Profile</Button.Content>
+                  </Button>
+                ) : null}
               </Grid.Column>
               <Grid.Column width={9}>
                 <Table basic="very" celled collapsing>

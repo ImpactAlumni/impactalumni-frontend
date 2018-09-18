@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Container } from "semantic-ui-react";
+import { Grid, Container, Image } from "semantic-ui-react";
 import "../App.css";
 
 import axios from "axios";
@@ -15,7 +15,7 @@ class Info extends Component {
 
   componentDidMount = async () => {
     await axios.get(`http://localhost:3000/batches`).then(res => {
-      console.log(res.data.data);
+      console.log(res);
       this.setState({ batches: res.data.data });
     });
   };
@@ -40,6 +40,24 @@ class Info extends Component {
         <Container>
           <div className="partner">
             <h1 className="partner-title">Partner</h1>
+          </div>
+          <div className="partnerIsi">
+            <Grid divided="vertically">
+              <Grid.Row columns={4}>
+                <Grid.Column>
+                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </div>
         </Container>
         <Footer />
