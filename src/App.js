@@ -115,7 +115,11 @@ class App extends Component {
 
                 <Menu.Menu position="right">
                   {this.state.isAuthenticated ? (
-                    <Label position="right">
+                    <Label
+                      position="right"
+                      as={Link}
+                      to={`/profile/${this.state.profile.id}`}
+                    >
                       <Image
                         circular
                         spaced="right"
@@ -123,7 +127,7 @@ class App extends Component {
                           this.state.profile.foto
                         }`}
                       />
-                      Wellcome 😘 {this.state.profile.fullName}
+                      Welcome 😘 {this.state.profile.fullName}
                     </Label>
                   ) : null}
                   {this.state.isAuthenticated ? (

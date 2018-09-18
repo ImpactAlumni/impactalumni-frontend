@@ -44,7 +44,10 @@ class JobsList extends Component {
     return (
       <div>
         <Grid>
-          <Grid.Column width={4}>
+          <Grid.Column
+            style={{ display: "flex", alignItems: "center" }}
+            width={4}
+          >
             <Popup
               trigger={
                 <Image
@@ -146,7 +149,10 @@ class JobsList extends Component {
               </Accordion.Content>
             </Accordion>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column
+            style={{ display: "flex", alignItems: "center" }}
+            width={3}
+          >
             <Modal
               trigger={
                 <Button animated color="blue">

@@ -5,7 +5,8 @@ import {
   Image,
   Table,
   Header,
-  Button
+  Button,
+  Icon
 } from "semantic-ui-react";
 import axios from "axios";
 
@@ -41,12 +42,24 @@ class profileStudent extends Component {
           </div>
           <div className="profileStudent-isi">
             <Grid>
-              <Grid.Column width={4}>
+              <Grid.Column style={{ textAlign: "center" }} width={4}>
                 <Image
+                  style={{ minWidth: "100%", marginBottom: "20px" }}
                   src={`http://localhost:3000/assets/foto/${
                     this.state.profile.foto
                   }`}
                 />
+                <Button
+                  inverted
+                  color="red"
+                  style={{ width: "45%" }}
+                  animated="vertical"
+                >
+                  <Button.Content hidden>
+                    <Icon name="edit" />
+                  </Button.Content>
+                  <Button.Content visible>Edit Profile</Button.Content>
+                </Button>
               </Grid.Column>
               <Grid.Column width={9}>
                 <Table basic="very" celled collapsing>
@@ -103,7 +116,11 @@ class profileStudent extends Component {
                           <Header.Content>Github:</Header.Content>
                         </Header>
                       </Table.Cell>
-                      <Table.Cell>{this.state.profile.github}</Table.Cell>
+                      <Table.Cell>
+                        <a target="_blank" href={this.state.profile.github}>
+                          {this.state.profile.github}
+                        </a>
+                      </Table.Cell>
                     </Table.Row>
                   </Table.Body>
                 </Table>
