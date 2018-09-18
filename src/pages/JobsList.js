@@ -27,12 +27,15 @@ class JobsList extends Component {
       .get(`http://localhost:3000/partners/${this.props.data.id_company}`)
       .then(res => {
         console.log(res.data.data);
-        // this.setState({ jobs: res.data.data });
+        this.setState({ company: res.data.data });
       });
   };
 
   render() {
     const { activeIndex } = this.state;
+    if (!this.state.company) {
+      return null;
+    }
 
     return (
       <div>
@@ -112,6 +115,42 @@ class JobsList extends Component {
               </Accordion.Title>
               <Accordion.Content active={activeIndex === 5}>
                 <p>{this.props.data.minimumExperience}</p>
+              </Accordion.Content>
+
+              <Accordion.Title
+                active={activeIndex === 6}
+                index={6}
+                onClick={this.handleClick}
+              >
+                <Icon name="dropdown" />
+                Company Name
+              </Accordion.Title>
+              <Accordion.Content active={activeIndex === 6}>
+                <p>{this.state.company.companyName}</p>
+              </Accordion.Content>
+
+              <Accordion.Title
+                active={activeIndex === 7}
+                index={7}
+                onClick={this.handleClick}
+              >
+                <Icon name="dropdown" />
+                Company Address
+              </Accordion.Title>
+              <Accordion.Content active={activeIndex === 7}>
+                <p>{this.state.company.companyAddress}</p>
+              </Accordion.Content>
+
+              <Accordion.Title
+                active={activeIndex === 8}
+                index={8}
+                onClick={this.handleClick}
+              >
+                <Icon name="dropdown" />
+                Company Industry
+              </Accordion.Title>
+              <Accordion.Content active={activeIndex === 8}>
+                <p>{this.state.company.companyIndustry}</p>
               </Accordion.Content>
             </Accordion>
           </Grid.Column>
