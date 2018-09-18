@@ -6,7 +6,8 @@ import {
   Accordion,
   Icon,
   List,
-  Divider
+  Divider,
+  Popup
 } from "semantic-ui-react";
 import React, { Component } from "react";
 
@@ -41,10 +42,30 @@ class JobsList extends Component {
       <div>
         <Grid>
           <Grid.Column width={4}>
-            <Image
-              src={`http://localhost:3000/assets/partner-logo/${
-                this.state.company.logo
-              }`}
+            <Popup
+              trigger={
+                <Image
+                  src={`http://localhost:3000/assets/partner-logo/${
+                    this.state.company.logo
+                  }`}
+                />
+              }
+              content={
+                <List>
+                  <List.Item>
+                    <List.Header>Company Name</List.Header>
+                    <p>{this.state.company.companyName}</p>
+                  </List.Item>
+                  <List.Item>
+                    <List.Header>Company Address</List.Header>
+                    <p>{this.state.company.companyAddress}</p>
+                  </List.Item>
+                  <List.Item>
+                    <List.Header>Company Industry</List.Header>
+                    <p>{this.state.company.companyIndustry}</p>
+                  </List.Item>
+                </List>
+              }
             />
           </Grid.Column>
           <Grid.Column width={9}>
@@ -121,7 +142,7 @@ class JobsList extends Component {
                 <p>{this.props.data.minimumExperience}</p>
               </Accordion.Content>
 
-              <Accordion.Title
+              {/* <Accordion.Title
                 active={activeIndex === 6}
                 index={6}
                 onClick={this.handleClick}
@@ -155,7 +176,7 @@ class JobsList extends Component {
               </Accordion.Title>
               <Accordion.Content active={activeIndex === 8}>
                 <p>{this.state.company.companyIndustry}</p>
-              </Accordion.Content>
+              </Accordion.Content> */}
             </Accordion>
           </Grid.Column>
           <Grid.Column width={3}>
