@@ -5,8 +5,7 @@ import {
   Image,
   Table,
   Header,
-  Segment,
-  List
+  Button
 } from "semantic-ui-react";
 import axios from "axios";
 
@@ -53,7 +52,6 @@ class profileStudent extends Component {
                       <Table.HeaderCell />
                     </Table.Row>
                   </Table.Header>
-
                   <Table.Body>
                     <Table.Row>
                       <Table.Cell>
@@ -109,7 +107,7 @@ class profileStudent extends Component {
               <Grid.Column width={3}>
                 <b>Current Status:</b>
                 <br />
-                {this.state.profile.curret_status}
+                {this.state.profile.current_status}
               </Grid.Column>
             </Grid>
           </div>

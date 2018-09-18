@@ -38,7 +38,7 @@ class BatchCard extends Component {
       <Modal
         trigger={
           <Grid.Column>
-            <Card link onClick={() => console.log("HELLO")}>
+            <Card link>
               <Image src={`http://localhost:3000/assets/${batch.image}`} />
               <Card.Content>
                 <Card.Header>{batch.batchName}</Card.Header>

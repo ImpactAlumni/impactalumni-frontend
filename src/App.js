@@ -10,7 +10,7 @@ import AboutUs from "./pages/aboutus";
 import LoginForm from "./pages/login-signup";
 import newPassword from "./pages/newPassword";
 import profileStudent from "./pages/profileStudent";
-import job_detail from "./pages/job_detail";
+import job_details from "./pages/job_details";
 
 class App extends Component {
   state = { activeItem: "home", isAuthenticated: false };
@@ -78,7 +78,7 @@ class App extends Component {
                   <Menu.Item
                     icon="handshake"
                     as={Link}
-                    to="/job_detail"
+                    to="/job_details"
                     name="Job Details"
                     active={activeItem === "Job Details"}
                     onClick={this.handleItemClick}
@@ -128,7 +128,7 @@ class App extends Component {
           />
           <Route path="/signup/:token" component={newPassword} />
           <Route path="/profile/:id" component={profileStudent} />
-          <Route path="/job_detail" component={job_detail} />
+          <Route path="/job_details" component={job_details} />
         </div>
       </Router>
     );

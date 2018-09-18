@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Container, Header, List, Segment } from "semantic-ui-react";
+import { Grid, Container } from "semantic-ui-react";
 import "../App.css";
 
 import axios from "axios";
