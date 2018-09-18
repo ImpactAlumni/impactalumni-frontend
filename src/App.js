@@ -29,17 +29,29 @@ class App extends Component {
           localStorage.token = res.data.token;
           this.setState({
             isAuthenticated: true,
-            profile: res.data
+            profile: res.data.user
           });
         }
       });
   };
 
-  // componentDidMount() {
-  //   if (localStorage.getItem("token")) {
-  //     this.setState({ isAuthenticated: true });
-  //   }
-  // }
+   componentWillMount = async () => {
+    if (localStorage.getItem("token")) {
+      await axios
+      .post(`http://localhost:3000/students/decode_token`, {
+        token: localStorage.getItem("token")
+      })
+      .then(async res => {
+        console.log(res.data)
+        if (res.data.user) {
+          await this.setState({
+            isAuthenticated: true,
+            profile: res.data.user
+          });
+        }
+      });
+    }
+  }
 
   logout = () => {
     localStorage.removeItem("token");
@@ -105,10 +117,10 @@ class App extends Component {
                     <Image
                       spaced="right"
                       src={`http://localhost:3000/assets/foto/${
-                        this.state.profile.user.foto
+                        this.state.profile.foto
                       }`}
                     />
-                    Wellcome :) {this.state.profile.user.fullName}
+                    Wellcome :) {this.state.profile.fullName}
                   </Label>
                 ) : null}
 
