@@ -69,6 +69,19 @@
   background-size: cover;
 }
 
+.partner {
+  margin-top: 50px;
+}
+
+.partner-title {
+  text-align: center;
+}
+
+.partnerIsi {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 /* About Us /////////////////////////////////////////////////////////*/
 .aboutus {
   margin-top: 50px;
@@ -118,19 +131,6 @@
 
 .info-menu {
   margin-top: 50px;
-}
-
-.partner {
-  margin-top: 100px;
-}
-
-.partner-title {
-  text-align: center;
-}
-
-.partnerIsi {
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 /* profileStudent /////////////////////////////////////////////////// */

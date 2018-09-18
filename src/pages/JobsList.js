@@ -45,34 +45,40 @@ class JobsList extends Component {
       <div>
         <Grid>
           <Grid.Column
-            style={{ display: "flex", alignItems: "center" }}
+            style={{ textAlign: "center" }}
+            // style={{ display: "flex", alignItems: "center" }}
             width={4}
           >
-            <Popup
-              trigger={
-                <Image
-                  src={`http://localhost:3000/assets/partner-logo/${
-                    this.state.company.logo
-                  }`}
-                />
-              }
-              content={
-                <List>
-                  <List.Item>
-                    <List.Header>Company Name</List.Header>
-                    <p>{this.state.company.companyName}</p>
-                  </List.Item>
-                  <List.Item>
-                    <List.Header>Company Address</List.Header>
-                    <p>{this.state.company.companyAddress}</p>
-                  </List.Item>
-                  <List.Item>
-                    <List.Header>Company Industry</List.Header>
-                    <p>{this.state.company.companyIndustry}</p>
-                  </List.Item>
-                </List>
-              }
+            <Image
+              style={{ marginBottom: "90px" }}
+              src={`http://localhost:3000/assets/partner-logo/${
+                this.state.company.logo
+              }`}
             />
+            <Modal
+              trigger={
+                <Button inverted color="red" animated>
+                  <Button.Content visible>Apply For Job</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name="arrow right" />
+                  </Button.Content>
+                </Button>
+              }
+              basic
+              size="small"
+            >
+              <Header icon="question circle" content="Are You sure" />
+              <Modal.Actions>
+                <Modal.Actions>
+                  <Button basic color="red" inverted>
+                    <Icon name="remove" /> No
+                  </Button>
+                  <Button color="green" inverted>
+                    <Icon name="checkmark" /> Yes
+                  </Button>
+                </Modal.Actions>
+              </Modal.Actions>
+            </Modal>
           </Grid.Column>
           <Grid.Column width={9}>
             <Accordion styled>
@@ -153,21 +159,22 @@ class JobsList extends Component {
             style={{ display: "flex", alignItems: "center" }}
             width={3}
           >
-            <Modal
-              trigger={
-                <Button animated color="blue">
-                  <Button.Content visible>Apply For Job</Button.Content>
-                  <Button.Content hidden>
-                    <Icon name="arrow right" />
-                  </Button.Content>
-                </Button>
-              }
-              basic
-              size="small"
-            >
-              <Header icon="check circle" content="Thanks For Applied 😉" />
-              <Modal.Actions />
-            </Modal>
+            <div>
+              <List>
+                <List.Item>
+                  <List.Header>Company Name</List.Header>
+                  <p>{this.state.company.companyName}</p>
+                </List.Item>
+                <List.Item>
+                  <List.Header>Company Address</List.Header>
+                  <p>{this.state.company.companyAddress}</p>
+                </List.Item>
+                <List.Item>
+                  <List.Header>Company Industry</List.Header>
+                  <p>{this.state.company.companyIndustry}</p>
+                </List.Item>
+              </List>
+            </div>
           </Grid.Column>
         </Grid>
         <Divider section />

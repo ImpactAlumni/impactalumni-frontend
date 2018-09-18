@@ -18,6 +18,7 @@ import ryu from "../img/Ryu.jpeg";
 import programmerGif from "../img/programmer.gif";
 
 import Footer from "./footer";
+import Partner from "./partner";
 
 class Home extends Component {
   render() {
@@ -234,6 +235,7 @@ class Home extends Component {
               <Grid.Row />
             </Grid>
           </Segment>
+          <Partner />
         </Container>
         {/* footer */}
         <Footer />

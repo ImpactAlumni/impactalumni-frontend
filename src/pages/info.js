@@ -4,7 +4,6 @@ import "../App.css";
 
 import axios from "axios";
 import BatchCard from "./batchCard";
-import Partner from "./partner";
 
 import Footer from "./footer";
 
@@ -37,9 +36,6 @@ class Info extends Component {
               </Grid.Row>
             </Grid>
           </div>
-        </Container>
-        <Container>
-          <Partner />
         </Container>
         <Footer />
       </div>

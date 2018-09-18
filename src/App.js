@@ -165,7 +165,9 @@ class App extends Component {
           />
           <Route path="/signup/:token" component={newPassword} />
           <Route path="/profile/:id" component={profileStudent} />
-          <Route path="/job_details" component={job_details} />
+          {this.state.isAuthenticated ? (
+            <Route path="/job_details" component={job_details} />
+          ) : null}
         </div>
       </Router>
     );
