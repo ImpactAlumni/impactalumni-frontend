@@ -23,7 +23,6 @@ class BatchCard extends Component {
     await axios
       .get(`http://localhost:3000/batches/${this.props.data.id}/students`)
       .then(data => {
-        console.log(data);
         this.setState({ students: data.data.data.students });
       });
   };
@@ -39,7 +38,9 @@ class BatchCard extends Component {
         trigger={
           <Grid.Column>
             <Card link>
-              <Image src={`http://localhost:3000/assets/${batch.image}`} />
+              <Image
+                src={`http://localhost:3000/assets/batch-logo/${batch.image}`}
+              />
               <Card.Content>
                 <Card.Header>{batch.batchName}</Card.Header>
                 <Card.Meta>
@@ -66,7 +67,7 @@ class BatchCard extends Component {
         <Modal.Content image scrolling>
           <Image
             size="medium"
-            src={`http://localhost:3000/assets/${batch.image}`}
+            src={`http://localhost:3000/assets/batch-logo/${batch.image}`}
             wrapped
           />
           <Modal.Description>

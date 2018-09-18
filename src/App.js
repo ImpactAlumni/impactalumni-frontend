@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Menu, Button, Container } from "semantic-ui-react";
+import { Menu, Button, Container, Label, Image } from "semantic-ui-react";
 import axios from "axios";
 
 import Home from "./pages/home";
@@ -25,13 +25,21 @@ class App extends Component {
       })
       .then(res => {
         if (res.data.token) {
+          console.log(res.data);
           localStorage.token = res.data.token;
           this.setState({
-            isAuthenticated: true
+            isAuthenticated: true,
+            profile: res.data
           });
         }
       });
   };
+
+  // componentDidMount() {
+  //   if (localStorage.getItem("token")) {
+  //     this.setState({ isAuthenticated: true });
+  //   }
+  // }
 
   logout = () => {
     localStorage.removeItem("token");
@@ -92,6 +100,18 @@ class App extends Component {
                   active={activeItem === "About Us"}
                   onClick={this.handleItemClick}
                 />
+                {this.state.isAuthenticated ? (
+                  <Label as="a" position="right">
+                    <Image
+                      spaced="right"
+                      src={`http://localhost:3000/assets/foto/${
+                        this.state.profile.user.foto
+                      }`}
+                    />
+                    Wellcome :) {this.state.profile.user.fullName}
+                  </Label>
+                ) : null}
+
                 <Menu.Menu position="right">
                   {this.state.isAuthenticated ? (
                     <Button

@@ -10,6 +10,8 @@ import {
 } from "semantic-ui-react";
 import React, { Component } from "react";
 
+import axios from "axios";
+
 class JobsList extends Component {
   state = { activeIndex: 0 };
 
@@ -18,6 +20,15 @@ class JobsList extends Component {
     const { activeIndex } = this.state;
     const newIndex = activeIndex === index ? -1 : index;
     this.setState({ activeIndex: newIndex });
+  };
+
+  componentDidMount = async () => {
+    await axios
+      .get(`http://localhost:3000/partners/${this.props.data.id_company}`)
+      .then(res => {
+        console.log(res.data.data);
+        // this.setState({ jobs: res.data.data });
+      });
   };
 
   render() {

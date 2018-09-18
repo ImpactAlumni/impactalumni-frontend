@@ -19,7 +19,7 @@ class job_details extends Component {
 
   componentDidMount = async () => {
     await axios.get(`http://localhost:3000/jobDetails`).then(res => {
-      console.log(res);
+      console.log(res.data.data);
       this.setState({ jobs: res.data.data });
     });
   };
