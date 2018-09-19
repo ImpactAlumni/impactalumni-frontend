@@ -33,7 +33,7 @@ class newPassword extends Component {
 
   setPassword = () => {
     axios
-      .post("http://localhost:3000/students/set_password", {
+      .post("${process.env.REACT_APP_IMPACTALUMNI}/students/set_password", {
         password: this.state.password,
         token: this.props.match.params.token
       })

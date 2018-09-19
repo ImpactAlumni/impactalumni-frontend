@@ -9,10 +9,12 @@ class Partner extends Component {
   }
 
   componentDidMount = async () => {
-    await axios.get(`http://localhost:3000/partners`).then(res => {
-      console.log(res.data.data);
-      this.setState({ partner: res.data.data });
-    });
+    await axios
+      .get(`${process.env.REACT_APP_IMPACTALUMNI}/partners`)
+      .then(res => {
+        console.log(res.data.data);
+        this.setState({ partner: res.data.data });
+      });
   };
 
   render() {
@@ -30,9 +32,9 @@ class Partner extends Component {
               {this.state.partner.map(partner => (
                 <Grid.Column style={{ display: "flex", alignItems: "center" }}>
                   <Image
-                    src={`http://localhost:3000/assets/partner-logo/${
-                      partner.logo
-                    }`}
+                    src={`${
+                      process.env.REACT_APP_IMPACTALUMNI
+                    }/assets/partner-logo/${partner.logo}`}
                   />
                 </Grid.Column>
               ))}

@@ -29,9 +29,12 @@ class JobsList extends Component {
 
   componentDidMount = async () => {
     await axios
-      .get(`http://localhost:3000/partners/${this.props.data.id_company}`)
+      .get(
+        `${process.env.REACT_APP_IMPACTALUMNI}/partners/${
+          this.props.data.id_company
+        }`
+      )
       .then(res => {
-        console.log(res.data.data);
         this.setState({ company: res.data.data });
       });
   };
@@ -52,7 +55,7 @@ class JobsList extends Component {
           >
             <Image
               style={{ marginBottom: "90px" }}
-              src={`http://localhost:3000/assets/partner-logo/${
+              src={`${process.env.REACT_APP_IMPACTALUMNI}/assets/partner-logo/${
                 this.state.company.logo
               }`}
             />

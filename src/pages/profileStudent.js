@@ -6,7 +6,10 @@ import {
   Table,
   Header,
   Button,
-  Icon
+  Icon,
+  Modal,
+  Input,
+  Form
 } from "semantic-ui-react";
 import axios from "axios";
 
@@ -14,7 +17,7 @@ import "../App.css";
 
 import Footer from "./footer";
 
-class profileStudent extends Component {
+class ProfileStudent extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -22,7 +25,11 @@ class profileStudent extends Component {
 
   componentDidMount = async () => {
     await axios
-      .get(`http://localhost:3000/students/${this.props.match.params.id}`)
+      .get(
+        `${process.env.REACT_APP_IMPACTALUMNI}/students/${
+          this.props.match.params.id
+        }`
+      )
       .then(res => {
         console.log(res.data.data);
         this.setState({ profile: res.data.data });
@@ -45,22 +52,81 @@ class profileStudent extends Component {
               <Grid.Column style={{ textAlign: "center" }} width={4}>
                 <Image
                   style={{ minWidth: "100%", marginBottom: "20px" }}
-                  src={`http://localhost:3000/assets/foto/${
+                  src={`${process.env.REACT_APP_IMPACTALUMNI}/assets/foto/${
                     this.state.profile.foto
                   }`}
                 />
-                {this.props.isAuthenticated ? (
-                  <Button
-                    inverted
-                    color="red"
-                    style={{ width: "45%" }}
-                    animated="vertical"
+                {this.props.user_id == this.props.match.params.id ? (
+                  <Modal
+                    trigger={
+                      <Button
+                        inverted
+                        color="red"
+                        style={{ width: "45%" }}
+                        animated="vertical"
+                      >
+                        <Button.Content hidden>
+                          <Icon name="edit" />
+                        </Button.Content>
+                        <Button.Content visible>Edit Profile</Button.Content>
+                      </Button>
+                    }
                   >
-                    <Button.Content hidden>
-                      <Icon name="edit" />
-                    </Button.Content>
-                    <Button.Content visible>Edit Profile</Button.Content>
-                  </Button>
+                    <Modal.Header>Edit My Profile</Modal.Header>
+                    <Modal.Content image scrolling>
+                      <Image
+                        size="medium"
+                        src="https://react.semantic-ui.com/images/wireframe/image.png"
+                        wrapped
+                      />
+
+                      <Modal.Description style={{ width: "60%" }}>
+                        <Header>Edit</Header>
+                        {/* <p>
+                          Lorem ipsum dolor, sit amet consectetur adipisicing
+                          elit. Harum dignissimos rerum necessitatibus corporis.
+                          Harum dolore eaque iure labore quasi vel cum veritatis
+                          nemo voluptatibus? Libero quaerat suscipit iste quo
+                          dicta!
+                        </p> */}
+                        <Form>
+                          <Form.Field required>
+                            <label>Last name</label>
+                            <Input placeholder="Full name" />
+                          </Form.Field>
+                          <Form.Field required>
+                            <label>Last name</label>
+                            <Input placeholder="Full name" />
+                          </Form.Field>
+                          <Form.Field required>
+                            <label>Last name</label>
+                            <Input placeholder="Full name" />
+                          </Form.Field>
+                          <Form.Field required>
+                            <label>Last name</label>
+                            <Input placeholder="Full name" />
+                          </Form.Field>
+                          <Form.Field required>
+                            <label>Last name</label>
+                            <Input placeholder="Full name" />
+                          </Form.Field>
+                          <Form.Field required>
+                            <label>Last name</label>
+                            <Input placeholder="Full name" />
+                          </Form.Field>
+                          <Form.Field required>
+                            <label>Last name</label>
+                            <Input placeholder="Full name" />
+                          </Form.Field>
+                        </Form>
+                      </Modal.Description>
+                    </Modal.Content>
+                    <Modal.Actions>
+                      <Button primary>
+                        Proceed <Icon name="chevron right" />
+                      </Button>
+                    </Modal.Actions>
+                  </Modal>
                 ) : null}
               </Grid.Column>
               <Grid.Column width={9}>
@@ -141,4 +207,4 @@ class profileStudent extends Component {
   }
 }
 
-export default profileStudent;
+export default ProfileStudent;

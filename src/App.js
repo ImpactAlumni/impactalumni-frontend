@@ -9,7 +9,7 @@ import Gallery from "./pages/gallery";
 import AboutUs from "./pages/aboutus";
 import LoginForm from "./pages/login-signup";
 import newPassword from "./pages/newPassword";
-import profileStudent from "./pages/profileStudent";
+import ProfileStudent from "./pages/profileStudent";
 import job_details from "./pages/job_details";
 
 class App extends Component {
@@ -19,13 +19,13 @@ class App extends Component {
 
   login = async (email, password) => {
     await axios
-      .post(`http://localhost:3000/students/login`, {
+      .post(`${process.env.REACT_APP_IMPACTALUMNI}/students/login`, {
         email: email,
         password: password
       })
       .then(res => {
+        console.log(res);
         if (res.data.token) {
-          console.log(res.data);
           localStorage.token = res.data.token;
           this.setState({
             isAuthenticated: true,
@@ -38,7 +38,7 @@ class App extends Component {
   componentWillMount = async () => {
     if (localStorage.getItem("token")) {
       await axios
-        .post(`http://localhost:3000/students/decode_token`, {
+        .post(`${process.env.REACT_APP_IMPACTALUMNI}/students/decode_token`, {
           token: localStorage.getItem("token")
         })
         .then(async res => {
@@ -123,9 +123,9 @@ class App extends Component {
                       <Image
                         circular
                         spaced="right"
-                        src={`http://localhost:3000/assets/foto/${
-                          this.state.profile.foto
-                        }`}
+                        src={`${
+                          process.env.REACT_APP_IMPACTALUMNI
+                        }/assets/foto/${this.state.profile.foto}`}
                       />
                       Welcome 😘 {this.state.profile.fullName}
                     </Label>
@@ -164,7 +164,18 @@ class App extends Component {
             )}
           />
           <Route path="/signup/:token" component={newPassword} />
-          <Route path="/profile/:id" component={profileStudent} />
+          <Route
+            path="/profile/:id"
+            render={props => (
+              <ProfileStudent
+                isAuthenticated={this.state.isAuthenticated}
+                user_id={
+                  this.state.isAuthenticated ? this.state.profile.id : null
+                }
+                {...props}
+              />
+            )}
+          />
           {this.state.isAuthenticated ? (
             <Route path="/job_details" component={job_details} />
           ) : null}

@@ -14,10 +14,12 @@ class Info extends Component {
   }
 
   componentDidMount = async () => {
-    await axios.get(`http://localhost:3000/batches`).then(res => {
-      console.log(res);
-      this.setState({ batches: res.data.data });
-    });
+    await axios
+      .get(`${process.env.REACT_APP_IMPACTALUMNI}/batches`)
+      .then(res => {
+        console.log(res);
+        this.setState({ batches: res.data.data });
+      });
   };
 
   render() {

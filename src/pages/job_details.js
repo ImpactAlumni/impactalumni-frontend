@@ -18,10 +18,12 @@ class job_details extends Component {
   state = {};
 
   componentDidMount = async () => {
-    await axios.get(`http://localhost:3000/jobDetails`).then(res => {
-      console.log(res.data.data);
-      this.setState({ jobs: res.data.data });
-    });
+    await axios
+      .get(`${process.env.REACT_APP_IMPACTALUMNI}/jobDetails`)
+      .then(res => {
+        console.log(res.data.data);
+        this.setState({ jobs: res.data.data });
+      });
   };
 
   render() {

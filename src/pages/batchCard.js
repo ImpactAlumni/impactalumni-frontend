@@ -21,7 +21,11 @@ class BatchCard extends Component {
 
   componentDidMount = async () => {
     await axios
-      .get(`http://localhost:3000/batches/${this.props.data.id}/students`)
+      .get(
+        `${process.env.REACT_APP_IMPACTALUMNI}/batches/${
+          this.props.data.id
+        }/students`
+      )
       .then(data => {
         console.log(data);
         this.setState({ students: data.data.data.students });
@@ -40,7 +44,9 @@ class BatchCard extends Component {
           <Grid.Column>
             <Card link>
               <Image
-                src={`http://localhost:3000/assets/batch-logo/${batch.image}`}
+                src={`${process.env.REACT_APP_IMPACTALUMNI}/assets/batch-logo/${
+                  batch.image
+                }`}
               />
               <Card.Content>
                 <Card.Header>{batch.batchName}</Card.Header>
@@ -68,7 +74,9 @@ class BatchCard extends Component {
         <Modal.Content image scrolling>
           <Image
             size="medium"
-            src={`http://localhost:3000/assets/batch-logo/${batch.image}`}
+            src={`${process.env.REACT_APP_IMPACTALUMNI}/assets/batch-logo/${
+              batch.image
+            }`}
             wrapped
           />
           <Modal.Description>
@@ -82,7 +90,9 @@ class BatchCard extends Component {
                 <List.Item>
                   <Image
                     avatar
-                    src={`http://localhost:3000/assets/foto/${student.foto}`}
+                    src={`${process.env.REACT_APP_IMPACTALUMNI}/assets/foto/${
+                      student.foto
+                    }`}
                   />
                   <List.Content>
                     <List.Header as={Link} to={"/profile/" + student.id}>
