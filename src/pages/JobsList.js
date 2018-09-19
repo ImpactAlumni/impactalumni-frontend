@@ -100,8 +100,6 @@ class JobsList extends Component {
               <Modal.Actions>
                 <Modal.Actions>
                   <Button
-                    // as={Link}
-                    // to="/job_details"
                     onClick={() => this.setState({ modal_open: false })}
                     basic
                     color="red"

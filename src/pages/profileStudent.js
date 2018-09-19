@@ -18,14 +18,14 @@ import "../App.css";
 import Footer from "./footer";
 
 const options = [
-  { key: "m", text: "Male", value: "male" },
-  { key: "f", text: "Female", value: "female" }
+  { key: "Male", text: "Male", value: "Male" },
+  { key: "Female", text: "Female", value: "Female" }
 ];
 
 class ProfileStudent extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { modal_open: false };
   }
 
   componentDidMount = async () => {
@@ -36,7 +36,7 @@ class ProfileStudent extends Component {
         }`
       )
       .then(res => {
-        console.log(res.data.data);
+        console.log(res);
         this.setState({ profile: res.data.data });
       });
   };
@@ -82,7 +82,9 @@ class ProfileStudent extends Component {
                       <Image
                         wrapped
                         size="medium"
-                        src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
+                        src={`${
+                          process.env.REACT_APP_IMPACTALUMNI
+                        }/assets/foto/${this.state.profile.foto}`}
                       />
                       <Modal.Description style={{ width: "70%" }}>
                         <Header>Edit Profile</Header>
@@ -93,14 +95,14 @@ class ProfileStudent extends Component {
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Full Name"
-                              placeholder="Full Name"
+                              value={this.state.profile.fullName}
                             />
                             <Form.Input
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-last-name"
                               label="Nick Name"
-                              placeholder="Nick Name"
+                              value={this.state.profile.nickName}
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
@@ -109,7 +111,7 @@ class ProfileStudent extends Component {
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="E-Mail"
-                              placeholder="E-Mail"
+                              value={this.state.profile.email}
                             />
                             <Form.Field
                               required
@@ -117,6 +119,7 @@ class ProfileStudent extends Component {
                               label="Gender"
                               options={options}
                               placeholder="Gender"
+                              value={this.state.profile.gender}
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
@@ -125,14 +128,14 @@ class ProfileStudent extends Component {
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Github"
-                              placeholder="Github"
+                              value={this.state.profile.github}
                             />
                             <Form.Input
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Current Status"
-                              placeholder="Current Status"
+                              value={this.state.profile.current_status}
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
@@ -141,10 +144,44 @@ class ProfileStudent extends Component {
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Address"
-                              placeholder="Address"
+                              value={this.state.profile.address}
                             />
                           </Form.Group>
-                          <Button secondary>UPDATE</Button>
+                          <Modal
+                            open={this.state.modal_open}
+                            trigger={
+                              <Button
+                                onClick={() =>
+                                  this.setState({ modal_open: true })
+                                }
+                                secondary
+                              >
+                                UPDATE
+                              </Button>
+                            }
+                            basic
+                            size="small"
+                          >
+                            <Header
+                              icon="edit"
+                              content="sure you want to update?"
+                            />
+                            <Modal.Actions>
+                              <Button
+                                basic
+                                color="red"
+                                inverted
+                                onClick={() =>
+                                  this.setState({ modal_open: false })
+                                }
+                              >
+                                <Icon name="remove" /> No
+                              </Button>
+                              <Button color="green">
+                                <Icon name="checkmark" /> Yes
+                              </Button>
+                            </Modal.Actions>
+                          </Modal>
                         </Form>
                       </Modal.Description>
                     </Modal.Content>

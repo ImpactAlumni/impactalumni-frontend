@@ -138,8 +138,8 @@ class Home extends Component {
                     }}
                   >
                     Alumni can be a source of information on the world of work &
-                    business for new graduates of a bootcamp, in addition to
-                    being an inspiration for students in today's bootcamp.
+                    business for new graduates of a boot camp, in addition to
+                    being an inspiration for students in today's Bootcamp.
                   </p>
                 </Grid.Column>
                 <Grid.Column
@@ -225,7 +225,7 @@ class Home extends Component {
                       fontSize: "1.33em"
                     }}
                   >
-                    Programmers have communities like github, gitlab etc. from
+                    Programmers have communities like GitHub, GitLab etc. from
                     that community the development in the world of coding is
                     very fast. Our fellow programmers help each other solve
                     problems
