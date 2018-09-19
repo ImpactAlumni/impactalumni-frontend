@@ -27,6 +27,7 @@ class App extends Component {
         console.log(res);
         if (res.data.token) {
           localStorage.token = res.data.token;
+          localStorage.user_id = res.data.user.id;
           this.setState({
             isAuthenticated: true,
             profile: res.data.user
@@ -55,6 +56,7 @@ class App extends Component {
 
   logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user_id");
     this.setState({
       isAuthenticated: false
     });
