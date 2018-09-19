@@ -118,6 +118,7 @@ class App extends Component {
                     <Label
                       position="right"
                       as={Link}
+                      onClick={this.forceUpdate}
                       to={`/profile/${this.state.profile.id}`}
                     >
                       <Image
