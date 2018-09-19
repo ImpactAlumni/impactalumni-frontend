@@ -7,7 +7,6 @@ import {
   Icon,
   List,
   Divider,
-  Popup,
   Button,
   Modal,
   Header
@@ -15,6 +14,8 @@ import {
 import React, { Component } from "react";
 
 import axios from "axios";
+
+import { Link } from "react-router-dom";
 
 class JobsList extends Component {
   state = { activeIndex: 0 };
@@ -67,10 +68,19 @@ class JobsList extends Component {
               basic
               size="small"
             >
-              <Header icon="question circle" content="Are You sure" />
+              <Header
+                icon="question circle"
+                content="Do you want to apply for this job ?"
+              />
               <Modal.Actions>
                 <Modal.Actions>
-                  <Button basic color="red" inverted>
+                  <Button
+                    // as={Link}
+                    // to="/job_details"
+                    basic
+                    color="red"
+                    inverted
+                  >
                     <Icon name="remove" /> No
                   </Button>
                   <Button color="green" inverted>
