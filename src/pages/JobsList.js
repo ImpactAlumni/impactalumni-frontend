@@ -18,7 +18,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 class JobsList extends Component {
-  state = { activeIndex: 0 };
+  state = { activeIndex: 0, modal_open: false };
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -36,6 +36,22 @@ class JobsList extends Component {
       )
       .then(res => {
         this.setState({ company: res.data.data });
+      });
+  };
+
+  onApplyJob = async () => {
+    axios
+      .post(`${process.env.REACT_APP_IMPACTALUMNI}/students_apply`, {
+        id_students: localStorage.getItem("user_id"),
+        id_jobDetails: this.state.company.id,
+        apply_date: Date.now()
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({ modal_open: false });
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 
@@ -61,7 +77,12 @@ class JobsList extends Component {
             />
             <Modal
               trigger={
-                <Button inverted color="red" animated>
+                <Button
+                  inverted
+                  color="red"
+                  animated
+                  onClick={() => this.setState({ modal_open: true })}
+                >
                   <Button.Content visible>Apply For Job</Button.Content>
                   <Button.Content hidden>
                     <Icon name="arrow right" />
@@ -69,6 +90,7 @@ class JobsList extends Component {
                 </Button>
               }
               basic
+              open={this.state.modal_open}
               size="small"
             >
               <Header
@@ -80,13 +102,14 @@ class JobsList extends Component {
                   <Button
                     // as={Link}
                     // to="/job_details"
+                    onClick={() => this.setState({ modal_open: false })}
                     basic
                     color="red"
                     inverted
                   >
                     <Icon name="remove" /> No
                   </Button>
-                  <Button color="green" inverted>
+                  <Button color="green" inverted onClick={this.onApplyJob}>
                     <Icon name="checkmark" /> Yes
                   </Button>
                 </Modal.Actions>
