@@ -16,6 +16,7 @@ import axios from "axios";
 import "../App.css";
 
 import Footer from "./footer";
+import JobsApplied from "./jobsApplied";
 
 const options = [
   { key: "Male", text: "Male", value: "Male" },
@@ -290,6 +291,7 @@ class ProfileStudent extends Component {
             </Grid>
           </div>
         </Container>
+        <JobsApplied />
         <Footer />
       </div>
     );
