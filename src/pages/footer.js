@@ -21,11 +21,25 @@ class Footer extends Component {
             <Grid.Row>
               <Grid.Column width={3}>
                 <Header inverted="inverted" as="h4" content="About" />
-                <List link="link" inverted="inverted">
-                  <List.Item as="a">Sitemap</List.Item>
-                  <List.Item as="a">Contact Us</List.Item>
-                  <List.Item as="a">Religious Ceremonies</List.Item>
-                  <List.Item as="a">Gazebo Plans</List.Item>
+                <List>
+                  <List.Item icon="users" content="Semantic UI" />
+                  <List.Item icon="marker" content="Jakarta" />
+                  <List.Item
+                    icon="mail"
+                    content={
+                      <a href="mailto:surbaktievan@ymail.com">
+                        surbaktievan@ymail.com
+                      </a>
+                    }
+                  />
+                  <List.Item
+                    icon="linkify"
+                    content={
+                      <a href="https://react.semantic-ui.com/">
+                        react.semantic-ui.com
+                      </a>
+                    }
+                  />
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>
