@@ -8,7 +8,7 @@ import {
   Button,
   Icon,
   Modal,
-  Input,
+  Select,
   Form
 } from "semantic-ui-react";
 import axios from "axios";
@@ -16,6 +16,11 @@ import axios from "axios";
 import "../App.css";
 
 import Footer from "./footer";
+
+const options = [
+  { key: "m", text: "Male", value: "male" },
+  { key: "f", text: "Female", value: "female" }
+];
 
 class ProfileStudent extends Component {
   constructor(props) {
@@ -73,59 +78,76 @@ class ProfileStudent extends Component {
                     }
                   >
                     <Modal.Header>Edit My Profile</Modal.Header>
-                    <Modal.Content image scrolling>
+                    <Modal.Content image>
                       <Image
-                        size="medium"
-                        src="https://react.semantic-ui.com/images/wireframe/image.png"
                         wrapped
+                        size="medium"
+                        src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
                       />
-
-                      <Modal.Description style={{ width: "60%" }}>
-                        <Header>Edit</Header>
-                        {/* <p>
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Harum dignissimos rerum necessitatibus corporis.
-                          Harum dolore eaque iure labore quasi vel cum veritatis
-                          nemo voluptatibus? Libero quaerat suscipit iste quo
-                          dicta!
-                        </p> */}
+                      <Modal.Description style={{ width: "70%" }}>
+                        <Header>Edit Profile</Header>
                         <Form>
-                          <Form.Field required>
-                            <label>Last name</label>
-                            <Input placeholder="Full name" />
-                          </Form.Field>
-                          <Form.Field required>
-                            <label>Last name</label>
-                            <Input placeholder="Full name" />
-                          </Form.Field>
-                          <Form.Field required>
-                            <label>Last name</label>
-                            <Input placeholder="Full name" />
-                          </Form.Field>
-                          <Form.Field required>
-                            <label>Last name</label>
-                            <Input placeholder="Full name" />
-                          </Form.Field>
-                          <Form.Field required>
-                            <label>Last name</label>
-                            <Input placeholder="Full name" />
-                          </Form.Field>
-                          <Form.Field required>
-                            <label>Last name</label>
-                            <Input placeholder="Full name" />
-                          </Form.Field>
-                          <Form.Field required>
-                            <label>Last name</label>
-                            <Input placeholder="Full name" />
-                          </Form.Field>
+                          <Form.Group widths="equal">
+                            <Form.Input
+                              required
+                              fluid
+                              id="form-subcomponent-shorthand-input-first-name"
+                              label="Full Name"
+                              placeholder="Full Name"
+                            />
+                            <Form.Input
+                              required
+                              fluid
+                              id="form-subcomponent-shorthand-input-last-name"
+                              label="Nick Name"
+                              placeholder="Nick Name"
+                            />
+                          </Form.Group>
+                          <Form.Group widths="equal">
+                            <Form.Input
+                              required
+                              fluid
+                              id="form-subcomponent-shorthand-input-first-name"
+                              label="E-Mail"
+                              placeholder="E-Mail"
+                            />
+                            <Form.Field
+                              required
+                              control={Select}
+                              label="Gender"
+                              options={options}
+                              placeholder="Gender"
+                            />
+                          </Form.Group>
+                          <Form.Group widths="equal">
+                            <Form.Input
+                              required
+                              fluid
+                              id="form-subcomponent-shorthand-input-first-name"
+                              label="Github"
+                              placeholder="Github"
+                            />
+                            <Form.Input
+                              required
+                              fluid
+                              id="form-subcomponent-shorthand-input-first-name"
+                              label="Current Status"
+                              placeholder="Current Status"
+                            />
+                          </Form.Group>
+                          <Form.Group widths="equal">
+                            <Form.Input
+                              required
+                              fluid
+                              id="form-subcomponent-shorthand-input-first-name"
+                              label="Address"
+                              placeholder="Address"
+                            />
+                          </Form.Group>
+                          <Button secondary>UPDATE</Button>
                         </Form>
                       </Modal.Description>
                     </Modal.Content>
-                    <Modal.Actions>
-                      <Button primary>
-                        Proceed <Icon name="chevron right" />
-                      </Button>
-                    </Modal.Actions>
                   </Modal>
                 ) : null}
               </Grid.Column>
