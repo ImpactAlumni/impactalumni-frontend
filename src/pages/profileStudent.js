@@ -25,8 +25,16 @@ const options = [
 class ProfileStudent extends Component {
   constructor(props) {
     super(props);
-    this.state = { modal_open: false };
+    this.state = {
+      modal_open: false
+    };
   }
+
+  handleChange = e => {
+    const profile = Object.assign(this.state.profile);
+    profile[e.target.name] = e.target.value;
+    this.setState({ profile });
+  };
 
   componentDidMount = async () => {
     await axios
@@ -91,60 +99,82 @@ class ProfileStudent extends Component {
                         <Form>
                           <Form.Group widths="equal">
                             <Form.Input
+                              name="fullName"
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Full Name"
                               value={this.state.profile.fullName}
+                              onChange={this.handleChange}
                             />
                             <Form.Input
+                              name="nickName"
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-last-name"
                               label="Nick Name"
                               value={this.state.profile.nickName}
+                              onChange={this.handleChange}
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
                             <Form.Input
+                              name="password"
+                              type="password"
+                              required
+                              fluid
+                              id="form-subcomponent-shorthand-input-first-name"
+                              label="Password"
+                            />
+                            <Form.Input
+                              name="email"
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="E-Mail"
                               value={this.state.profile.email}
+                              onChange={this.handleChange}
                             />
                             <Form.Field
+                              name="gender"
                               required
                               control={Select}
                               label="Gender"
                               options={options}
                               placeholder="Gender"
                               value={this.state.profile.gender}
+                              onChange={this.handleChange}
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
                             <Form.Input
+                              name="github"
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Github"
                               value={this.state.profile.github}
+                              onChange={this.handleChange}
                             />
                             <Form.Input
+                              name="current_status"
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Current Status"
                               value={this.state.profile.current_status}
+                              onChange={this.handleChange}
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
                             <Form.Input
+                              name="address"
                               required
                               fluid
                               id="form-subcomponent-shorthand-input-first-name"
                               label="Address"
                               value={this.state.profile.address}
+                              onChange={this.handleChange}
                             />
                           </Form.Group>
                           <Modal
