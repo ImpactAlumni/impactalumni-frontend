@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Grid,
-  Image,
-  Reveal,
-  Card,
-  Segment,
-  Header,
-  List
-} from "semantic-ui-react";
+import { Container, Grid, Image, Reveal, Card } from "semantic-ui-react";
 
 import "../App.css";
 

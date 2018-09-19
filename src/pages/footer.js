@@ -81,7 +81,7 @@ class Footer extends Component {
               </Grid.Column>
               <Grid.Column width={7}>
                 <Header as="h4" inverted="inverted">
-                  thank you for visiting our website :)
+                  Thank you for visiting our website :)
                 </Header>
                 <p>
                   We apologize if our website makes you uncomfortable.

@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Segment,
-  Container,
-  List,
-  Image
-} from "semantic-ui-react";
+import { Button, Form, Grid, Header, Segment, Image } from "semantic-ui-react";
 
 import "../App.css";
 import impactlogo from "../img/impactlogo.jpeg";

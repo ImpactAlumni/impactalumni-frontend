@@ -1,8 +1,6 @@
 import {
-  Container,
   Grid,
   Image,
-  state,
   Accordion,
   Icon,
   List,

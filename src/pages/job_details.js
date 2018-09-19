@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Grid,
-  Image,
-  state,
-  Accordion,
-  Icon,
-  List
-} from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 
 import axios from "axios";
 

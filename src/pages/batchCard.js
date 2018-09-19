@@ -7,8 +7,7 @@ import {
   Icon,
   Modal,
   List,
-  Header,
-  Button
+  Header
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import axios from "axios";
