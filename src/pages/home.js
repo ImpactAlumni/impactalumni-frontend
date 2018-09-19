@@ -9,8 +9,7 @@ import {
   Button,
   Container,
   Image,
-  Header,
-  List
+  Header
 } from "semantic-ui-react";
 
 import container1 from "../img/container1.jpeg";
@@ -58,14 +57,16 @@ class Home extends Component {
                   <Header
                     as="h3"
                     style={{
-                      fontSize: "2em"
+                      fontSize: "2em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     We Help Advance Indonesian Technology
                   </Header>
                   <p
                     style={{
-                      fontSize: "1.33em"
+                      fontSize: "1.33em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     We are aware that technological advances are now growing
@@ -75,14 +76,16 @@ class Home extends Component {
                   <Header
                     as="h3"
                     style={{
-                      fontSize: "2em"
+                      fontSize: "2em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     We create an alumni community
                   </Header>
                   <p
                     style={{
-                      fontSize: "1.33em"
+                      fontSize: "1.33em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     yes, by making our alumni community easier to exchange
@@ -127,14 +130,16 @@ class Home extends Component {
                   <Header
                     as="h3"
                     style={{
-                      fontSize: "2em"
+                      fontSize: "2em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     "Why the alumni community?"
                   </Header>
                   <p
                     style={{
-                      fontSize: "1.33em"
+                      fontSize: "1.33em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     Alumni can be a source of information on the world of work &
@@ -151,7 +156,8 @@ class Home extends Component {
                   <Header
                     as="h3"
                     style={{
-                      fontSize: "2em"
+                      fontSize: "2em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     "Individually we are one drop. But together, we are an
@@ -159,7 +165,8 @@ class Home extends Component {
                   </Header>
                   <p
                     style={{
-                      fontSize: "1.33em"
+                      fontSize: "1.33em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     <Image avatar="avatar" src={ryu} />
@@ -215,14 +222,16 @@ class Home extends Component {
                   <Header
                     as="h3"
                     style={{
-                      fontSize: "2em"
+                      fontSize: "2em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     Programmer never be able to code alone
                   </Header>
                   <p
                     style={{
-                      fontSize: "1.33em"
+                      fontSize: "1.33em",
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                     }}
                   >
                     Programmers have communities like GitHub, GitLab etc. from
