@@ -22,7 +22,7 @@ class Footer extends Component {
               <Grid.Column width={3}>
                 <Header inverted="inverted" as="h4" content="About" />
                 <List>
-                  <List.Item icon="users" content="Semantic UI" />
+                  <List.Item icon="users" content="blackKuda" />
                   <List.Item icon="marker" content="Jakarta" />
                   <List.Item
                     icon="mail"
@@ -35,29 +35,57 @@ class Footer extends Component {
                   <List.Item
                     icon="linkify"
                     content={
-                      <a href="https://react.semantic-ui.com/">
-                        react.semantic-ui.com
+                      <a href="https://impactalumni.netlify.com/">
+                        impactalumni.netlify.com
                       </a>
                     }
                   />
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>
-                <Header inverted="inverted" as="h4" content="Services" />
+                <Header inverted="inverted" as="h4" content="Social Media" />
                 <List link="link" inverted="inverted">
-                  <List.Item as="a">Banana Pre-Order</List.Item>
-                  <List.Item as="a">DNA FAQ</List.Item>
-                  <List.Item as="a">How To Access</List.Item>
-                  <List.Item as="a">Favorite X-Men</List.Item>
+                  <List.Item
+                    icon="instagram"
+                    content={
+                      <a href="https://www.instagram.com/waysp/?hl=en">
+                        @waysp
+                      </a>
+                    }
+                  />
+                  <List.Item
+                    icon="instagram"
+                    content={
+                      <a href="https://www.instagram.com/michaelyps/?hl=en">
+                        @michaelyps
+                      </a>
+                    }
+                  />
+                  <List.Item
+                    icon="instagram"
+                    content={
+                      <a href="https://www.instagram.com/apip_shato/?hl=en">
+                        @apip_shato
+                      </a>
+                    }
+                  />
+                  <List.Item
+                    icon="instagram"
+                    content={
+                      <a href="https://www.instagram.com/waysp/?hl=en">
+                        @waysp
+                      </a>
+                    }
+                  />
                 </List>
               </Grid.Column>
               <Grid.Column width={7}>
                 <Header as="h4" inverted="inverted">
-                  Footer Header
+                  thank you for visiting our website :)
                 </Header>
                 <p>
-                  Extra space for a call to action inside the footer that could
-                  help re-engage users.
+                  We apologize if our website makes you uncomfortable.
+                  development of this website will continue. coming soon . . .
                 </p>
               </Grid.Column>
             </Grid.Row>
