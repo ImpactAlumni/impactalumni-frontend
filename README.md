@@ -25,14 +25,6 @@
 
 1. Run: `npm run build` to build the app
 
-# Modusin Web with React
-
-> Alumni is a publishing network for learners
-
-The goal of this app is to clone a [Medium](https://medium.com) web app, called [Modusin](https://modusin.com).
-
-![Screenshot](./assets/screenshot.png)
-
 ## Tech Stack
 
 - React.js
