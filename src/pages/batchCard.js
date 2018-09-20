@@ -80,10 +80,6 @@ class BatchCard extends Component {
           />
           <Modal.Description>
             <Header>{batch.batchName}</Header>
-            <p>
-              This is an example of expanded content that will cause the modal's
-              dimmer to scroll
-            </p>
             <List animated verticalAlign="middle">
               {this.state.students.map(student => (
                 <List.Item>

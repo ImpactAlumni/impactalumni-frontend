@@ -28,7 +28,10 @@ class newPassword extends Component {
         password: this.state.password,
         token: this.props.match.params.token
       })
-      .then(res => console.log(res.data));
+      .then(res => {
+        console.log(res.data);
+        this.props.history.push("/login");
+      });
   };
 
   render() {
