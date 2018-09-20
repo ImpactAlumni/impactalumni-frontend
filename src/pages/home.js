@@ -41,7 +41,7 @@ class Home extends Component {
         >
           <Container>
             <div>
-              <Typing speed={150}>
+              <Typing loop speed={150}>
                 <div className="header-kata1">console.log("impactAlumni")</div>
               </Typing>
             </div>
