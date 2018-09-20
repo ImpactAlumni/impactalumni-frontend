@@ -37,7 +37,13 @@ class Gallery extends Component {
           <div style={{ marginBottom: "50px" }}>
             <Container>
               <div>
-                <h1>Gallery</h1>
+                <h1
+                  style={{
+                    fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+                  }}
+                >
+                  Gallery
+                </h1>
               </div>
               <div style={{ marginTop: "50px" }}>
                 <Grid style={{ display: "flex", alignItems: "center" }}>
