@@ -27,7 +27,14 @@ class job_details extends Component {
       <div className="jobDetails">
         <Container>
           <div>
-            <h1 className="jobDetails-title">Avaible Jobs</h1>
+            <h1
+              style={{
+                fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+              }}
+              className="jobDetails-title"
+            >
+              Avaible Jobs
+            </h1>
           </div>
           <div className="jobDetails-isi">
             {this.state.jobs.map(jobs => (

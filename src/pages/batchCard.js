@@ -48,7 +48,13 @@ class BatchCard extends Component {
                 }`}
               />
               <Card.Content>
-                <Card.Header>{batch.batchName}</Card.Header>
+                <Card.Header
+                  style={{
+                    fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+                  }}
+                >
+                  {batch.batchName}
+                </Card.Header>
                 <Card.Meta>
                   <span className="date">
                     {moment(batch.startDate).format("LL")}
@@ -59,7 +65,12 @@ class BatchCard extends Component {
                   </span>
                 </Card.Meta>
               </Card.Content>
-              <Card.Content extra>
+              <Card.Content
+                style={{
+                  fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+                }}
+                extra
+              >
                 <a>
                   <Icon name="user" />
                   {this.state.students.length} Students
@@ -69,7 +80,13 @@ class BatchCard extends Component {
           </Grid.Column>
         }
       >
-        <Modal.Header>Batch Detail</Modal.Header>
+        <Modal.Header
+          style={{
+            fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+          }}
+        >
+          Batch Detail
+        </Modal.Header>
         <Modal.Content image scrolling>
           <Image
             size="medium"
@@ -79,7 +96,13 @@ class BatchCard extends Component {
             wrapped
           />
           <Modal.Description>
-            <Header>{batch.batchName}</Header>
+            <Header
+              style={{
+                fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+              }}
+            >
+              {batch.batchName}
+            </Header>
             <List animated verticalAlign="middle">
               {this.state.students.map(student => (
                 <List.Item>
@@ -90,7 +113,13 @@ class BatchCard extends Component {
                     }`}
                   />
                   <List.Content>
-                    <List.Header as={Link} to={"/profile/" + student.id}>
+                    <List.Header
+                      style={{
+                        fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+                      }}
+                      as={Link}
+                      to={"/profile/" + student.id}
+                    >
                       {student.fullName}
                     </List.Header>
                   </List.Content>

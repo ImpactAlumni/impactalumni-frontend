@@ -27,7 +27,14 @@ class Info extends Component {
       <div className="info-menu">
         <Container>
           <div>
-            <h1 className="alumni-title">Batch</h1>
+            <h1
+              style={{
+                fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+              }}
+              className="alumni-title"
+            >
+              Batch
+            </h1>
           </div>
           <div className="batch-logo1">
             <Grid centered divided="vertically">

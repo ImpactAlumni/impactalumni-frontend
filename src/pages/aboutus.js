@@ -20,10 +20,21 @@ class AboutUs extends Component {
     return (
       <div className="aboutus">
         <div className="aboutus-title">
-          <h1>Our Team Project</h1>
+          <h1
+            style={{
+              fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+            }}
+          >
+            Our Team Project
+          </h1>
         </div>
         <div>
-          <Container className="aboutus-isi">
+          <Container
+            style={{
+              fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+            }}
+            className="aboutus-isi"
+          >
             <Grid divided="vertically">
               <Grid.Row columns={4}>
                 <Grid.Column>

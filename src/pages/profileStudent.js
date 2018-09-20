@@ -78,9 +78,21 @@ class ProfileStudent extends Component {
       <div className="studentProfile">
         <Container>
           <div>
-            <h1 className="profileStudent-title">Student profile</h1>
+            <h1
+              style={{
+                fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+              }}
+              className="profileStudent-title"
+            >
+              Student profile
+            </h1>
           </div>
-          <div className="profileStudent-isi">
+          <div
+            style={{
+              fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+            }}
+            className="profileStudent-isi"
+          >
             <Grid>
               <Grid.Column style={{ textAlign: "center" }} width={4}>
                 <Image

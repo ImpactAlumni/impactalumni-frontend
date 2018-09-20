@@ -42,7 +42,15 @@ class Home extends Component {
             <div className="header-kata2">Coding means community :)</div>
             <div>
               {" "}
-              <Button as={Link} to="/gallery" primary size="huge">
+              <Button
+                style={{
+                  fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+                }}
+                as={Link}
+                to="/gallery"
+                primary
+                size="huge"
+              >
                 Get Started
                 <Icon name="right arrow" />
               </Button>{" "}
