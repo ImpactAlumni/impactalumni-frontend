@@ -28,7 +28,7 @@ class Footer extends Component {
                     icon="mail"
                     content={
                       <a href="mailto:surbaktievan@ymail.com">
-                        surbaktievan@ymail.com
+                        impactbyte@gmail.com
                       </a>
                     }
                   />
@@ -36,7 +36,7 @@ class Footer extends Component {
                     icon="linkify"
                     content={
                       <a href="https://impactalumni.netlify.com/">
-                        impactalumni.netlify.com
+                        https://impactalumni.com/
                       </a>
                     }
                   />
