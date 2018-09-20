@@ -13,7 +13,7 @@ import {
 import { Redirect } from "react-router-dom";
 import impactlogo from "../img/impactlogo.jpeg";
 import Footer from "./footer";
-import axios from "axios"
+import axios from "axios";
 
 class LoginForm extends Component {
   constructor(props) {
@@ -32,10 +32,15 @@ class LoginForm extends Component {
   };
 
   generateSignUpForm = () => {
-    axios.post(`${process.env.REACT_APP_IMPACTALUMNI}/students/generate_sign_up_form`, {
-      email: this.state.input_request_email
-    }).then(res => console.log(res))
-  }
+    axios
+      .post(
+        `${process.env.REACT_APP_IMPACTALUMNI}/students/generate_sign_up_form`,
+        {
+          email: this.state.input_request_email
+        }
+      )
+      .then(res => console.log(res));
+  };
 
   render() {
     const { input_email, input_password } = this.state;
@@ -119,7 +124,12 @@ class LoginForm extends Component {
                         />
                         <Modal
                           trigger={
-                            <Button color="blue" fluid size="large" onClick={() => this.generateSignUpForm()}>
+                            <Button
+                              color="blue"
+                              fluid
+                              size="large"
+                              onClick={() => this.generateSignUpForm()}
+                            >
                               Request Permission
                             </Button>
                           }
