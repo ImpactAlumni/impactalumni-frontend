@@ -195,11 +195,9 @@ class Home extends Component {
         >
           {" "}
           <Container>
-            <Typing loop speed={150}>
-              <div className="middle3-kata">"First, Solve The Problem.</div>
-              <div className="middle3-kata1">Then, Write The Code"</div>
-              <div className="middle3-kata2">- John Jhonson</div>
-            </Typing>
+            <div className="middle3-kata">"First, Solve The Problem.</div>
+            <div className="middle3-kata1">Then, Write The Code"</div>
+            <div className="middle3-kata2">- John Jhonson</div>
           </Container>
         </Segment>
         {/* middle4 */}
