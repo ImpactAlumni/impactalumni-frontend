@@ -326,7 +326,7 @@ class ProfileStudent extends Component {
             </Grid>
           </div>
         </Container>
-        <JobsApplied />
+        {/* <JobsApplied /> */}
         <Footer />
       </div>
     );
