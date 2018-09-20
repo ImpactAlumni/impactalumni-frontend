@@ -17,14 +17,15 @@
 .header-kata1 {
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 60px;
-  margin-top: 300px;
+  margin-top: 250px;
   text-shadow: 2px 2px 4px #000000;
 }
 
 .header-kata2 {
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 30px;
-  margin-top: 100px;
+  margin-top: 70px;
+  margin-bottom: 30px;
   text-shadow: 2px 2px 4px #000000;
 }
 

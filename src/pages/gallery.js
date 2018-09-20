@@ -26,84 +26,86 @@ class Gallery extends Component {
   state = {};
   render() {
     return (
-      <div
-        style={{
-          textAlign: "center",
-          marginTop: "50px",
-          verticalAlign: "middle"
-        }}
-      >
-        <div style={{ marginBottom: "50px" }}>
-          <Container>
-            <div>
-              <h1>Gallery</h1>
-            </div>
-            <div style={{ marginTop: "50px" }}>
-              <Grid style={{ display: "flex", alignItems: "center" }}>
-                <Grid.Column width={4}>
-                  <Image style={{ marginBottom: "40px" }} src={c} />
-                  <Image src={d} />
-                </Grid.Column>
-                <Grid.Column width={9}>
-                  <Image src={e} fluid />
-                </Grid.Column>
-                <Grid.Column width={3}>
-                  <Image style={{ marginBottom: "35px" }} src={f} fluid />
-                  <Image style={{ marginBottom: "35px" }} src={g} />
-                  <Image src={h} />
-                </Grid.Column>
-              </Grid>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={8}>
-                    <Image src={j} />
-                  </Grid.Column>
-                  <Grid.Column width={8}>
-                    <Image src={o} />
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-              <Grid>
-                <Grid.Row>
+      <div>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "50px",
+            verticalAlign: "middle"
+          }}
+        >
+          <div style={{ marginBottom: "50px" }}>
+            <Container>
+              <div>
+                <h1>Gallery</h1>
+              </div>
+              <div style={{ marginTop: "50px" }}>
+                <Grid style={{ display: "flex", alignItems: "center" }}>
                   <Grid.Column width={4}>
-                    <Image src={a} />
+                    <Image style={{ marginBottom: "40px" }} src={c} />
+                    <Image src={d} />
                   </Grid.Column>
-                  <Grid.Column width={4}>
-                    <Image src={b} />
+                  <Grid.Column width={9}>
+                    <Image src={e} fluid />
                   </Grid.Column>
-                  <Grid.Column width={4}>
-                    <Image src={k} />
+                  <Grid.Column width={3}>
+                    <Image style={{ marginBottom: "35px" }} src={f} fluid />
+                    <Image style={{ marginBottom: "35px" }} src={g} />
+                    <Image src={h} />
                   </Grid.Column>
-                  <Grid.Column width={4}>
-                    <Image src={p} />
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={5}>
-                    <Image src={l} />
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <Image src={q} />
-                  </Grid.Column>
-                  <Grid.Column width={6}>
-                    <Image src={r} />
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={8}>
-                    <Image src={i} />
-                  </Grid.Column>
-                  <Grid.Column width={8}>
-                    <Image src={n} />
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </div>
-          </Container>
+                </Grid>
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={8}>
+                      <Image src={j} />
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                      <Image src={o} />
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={4}>
+                      <Image src={a} />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                      <Image src={b} />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                      <Image src={k} />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                      <Image src={p} />
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={5}>
+                      <Image src={l} />
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <Image src={q} />
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Image src={r} />
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={8}>
+                      <Image src={i} />
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                      <Image src={n} />
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </div>
+            </Container>
+          </div>
         </div>
         <Footer />
       </div>

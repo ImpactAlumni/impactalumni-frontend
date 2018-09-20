@@ -9,7 +9,8 @@ import {
   Button,
   Container,
   Image,
-  Header
+  Header,
+  Icon
 } from "semantic-ui-react";
 
 import container1 from "../img/container1.jpeg";
@@ -18,6 +19,8 @@ import programmerGif from "../img/programmer.gif";
 
 import Footer from "./footer";
 import Partner from "./partner";
+
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   render() {
@@ -37,6 +40,13 @@ class Home extends Component {
           <Container>
             <div className="header-kata1">console.log("impactAlumni")</div>
             <div className="header-kata2">Coding means community :)</div>
+            <div>
+              {" "}
+              <Button as={Link} to="/gallery" primary size="huge">
+                Get Started
+                <Icon name="right arrow" />
+              </Button>{" "}
+            </div>
           </Container>
         </Segment>
         {/* middle1 */}
@@ -99,13 +109,6 @@ class Home extends Component {
                     size="large"
                     src={container1}
                   />
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column textAlign="center">
-                  <Button color="red" size="huge">
-                    Check Them Out
-                  </Button>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
