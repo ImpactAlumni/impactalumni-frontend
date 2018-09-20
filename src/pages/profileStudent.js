@@ -50,8 +50,22 @@ class ProfileStudent extends Component {
       });
   };
 
+  onSubmitProfile = () => {
+    const profile = this.state.profile;
+    axios
+      .put(
+        `${process.env.REACT_APP_IMPACTALUMNI}/students/${
+          this.props.match.params.id
+        }`,
+        { ...profile }
+      )
+      .then(res => {
+        console.log(res);
+        this.setState({ profile: res.data.data, modal_open: false });
+      });
+  };
+
   render() {
-    console.log(this.props);
     if (!this.state.profile) {
       return null;
     }
@@ -119,14 +133,6 @@ class ProfileStudent extends Component {
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
-                            <Form.Input
-                              name="password"
-                              type="password"
-                              required
-                              fluid
-                              id="form-subcomponent-shorthand-input-first-name"
-                              label="Password"
-                            />
                             <Form.Input
                               name="email"
                               required
@@ -208,7 +214,10 @@ class ProfileStudent extends Component {
                               >
                                 <Icon name="remove" /> No
                               </Button>
-                              <Button color="green">
+                              <Button
+                                color="green"
+                                onClick={this.onSubmitProfile}
+                              >
                                 <Icon name="checkmark" /> Yes
                               </Button>
                             </Modal.Actions>
