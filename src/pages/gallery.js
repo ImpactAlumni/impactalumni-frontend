@@ -41,15 +41,15 @@ class Gallery extends Component {
             <div style={{ marginTop: "50px" }}>
               <Grid style={{ display: "flex", alignItems: "center" }}>
                 <Grid.Column width={4}>
-                  <Image style={{ marginBottom: "20px" }} src={c} />
+                  <Image style={{ marginBottom: "40px" }} src={c} />
                   <Image src={d} />
                 </Grid.Column>
                 <Grid.Column width={9}>
                   <Image src={e} fluid />
                 </Grid.Column>
                 <Grid.Column width={3}>
-                  <Image style={{ marginBottom: "20px" }} src={f} fluid />
-                  <Image style={{ marginBottom: "20px" }} src={g} />
+                  <Image style={{ marginBottom: "35px" }} src={f} fluid />
+                  <Image style={{ marginBottom: "35px" }} src={g} />
                   <Image src={h} />
                 </Grid.Column>
               </Grid>
@@ -87,7 +87,7 @@ class Gallery extends Component {
                   <Grid.Column width={5}>
                     <Image src={q} />
                   </Grid.Column>
-                  <Grid.Column width={5}>
+                  <Grid.Column width={6}>
                     <Image src={r} />
                   </Grid.Column>
                 </Grid.Row>
