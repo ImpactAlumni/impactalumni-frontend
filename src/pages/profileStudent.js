@@ -27,7 +27,8 @@ class ProfileStudent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal_open: false
+      modal_open: false,
+      modal_form: false
     };
   }
 
@@ -61,7 +62,11 @@ class ProfileStudent extends Component {
       )
       .then(res => {
         console.log(res);
-        this.setState({ profile: res.data.data, modal_open: false });
+        this.setState({
+          profile: res.data.data,
+          modal_open: false,
+          modal_form: false
+        });
       });
   };
 
@@ -92,6 +97,7 @@ class ProfileStudent extends Component {
                         color="red"
                         style={{ width: "45%" }}
                         animated="vertical"
+                        onClick={() => this.setState({ modal_form: true })}
                       >
                         <Button.Content hidden>
                           <Icon name="edit" />
@@ -99,6 +105,7 @@ class ProfileStudent extends Component {
                         <Button.Content visible>Edit Profile</Button.Content>
                       </Button>
                     }
+                    open={this.state.modal_form}
                   >
                     <Modal.Header>Edit My Profile</Modal.Header>
                     <Modal.Content image>
@@ -184,6 +191,13 @@ class ProfileStudent extends Component {
                               onChange={this.handleChange}
                             />
                           </Form.Group>
+                          <Button
+                            inverted
+                            color="red"
+                            onClick={() => this.setState({ modal_form: false })}
+                          >
+                            CANCEL
+                          </Button>
                           <Modal
                             open={this.state.modal_open}
                             trigger={

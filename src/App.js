@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Menu, Button, Container, Label, Image } from "semantic-ui-react";
+import {
+  Menu,
+  Button,
+  Container,
+  Label,
+  Image,
+  Dimmer,
+  Header,
+  Icon
+} from "semantic-ui-react";
 import axios from "axios";
 
 import Home from "./pages/home";
@@ -13,7 +22,7 @@ import ProfileStudent from "./pages/profileStudent";
 import job_details from "./pages/job_details";
 
 class App extends Component {
-  state = { activeItem: "home", isAuthenticated: false };
+  state = { activeItem: "home", isAuthenticated: false, passwordWrong: false };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -31,6 +40,11 @@ class App extends Component {
           this.setState({
             isAuthenticated: true,
             profile: res.data.user
+          });
+        } else {
+          console.log("error");
+          this.setState({
+            passwordWrong: true
           });
         }
       });
@@ -182,6 +196,19 @@ class App extends Component {
           {this.state.isAuthenticated ? (
             <Route path="/job_details" component={job_details} />
           ) : null}
+          <Dimmer
+            active={this.state.passwordWrong}
+            onClickOutside={() => this.setState({ passwordWrong: false })}
+            page
+          >
+            <Header as="h2" icon inverted>
+              <Icon name="lock" />
+              Password Invalid!
+              <Header.Subheader>
+                Yoour computer will explode in 5 minutes :(
+              </Header.Subheader>
+            </Header>
+          </Dimmer>
         </div>
       </Router>
     );
