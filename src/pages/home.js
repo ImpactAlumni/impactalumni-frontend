@@ -13,6 +13,8 @@ import {
   Icon
 } from "semantic-ui-react";
 
+import Typing from "react-typing-animation";
+
 import container1 from "../img/container1.jpeg";
 import ryu from "../img/Ryu.jpeg";
 import programmerGif from "../img/programmer.gif";
@@ -38,7 +40,11 @@ class Home extends Component {
           vertical="vertical"
         >
           <Container>
-            <div className="header-kata1">console.log("impactAlumni")</div>
+            <div>
+              <Typing speed={150}>
+                <div className="header-kata1">console.log("impactAlumni")</div>
+              </Typing>
+            </div>
             <div className="header-kata2">Impact Byte Alumni Community :)</div>
             <div>
               {" "}
