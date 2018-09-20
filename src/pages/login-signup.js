@@ -11,17 +11,17 @@ import {
   Modal
 } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
-
 import impactlogo from "../img/impactlogo.jpeg";
-
 import Footer from "./footer";
+import axios from "axios"
 
 class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       input_email: "",
-      input_password: ""
+      input_password: "",
+      input_request_email: ""
     };
   }
 
@@ -30,6 +30,12 @@ class LoginForm extends Component {
       [e.target.name]: e.target.value
     });
   };
+
+  generateSignUpForm = () => {
+    axios.post(`${process.env.REACT_APP_IMPACTALUMNI}/students/generate_sign_up_form`, {
+      email: this.state.input_request_email
+    }).then(res => console.log(res))
+  }
 
   render() {
     const { input_email, input_password } = this.state;
@@ -104,13 +110,16 @@ class LoginForm extends Component {
                       <Segment stacked>
                         <Form.Input
                           fluid
+                          name="input_request_email"
+                          value={this.state.input_request_email}
+                          onChange={this.handleChange}
                           icon="user"
                           iconPosition="left"
                           placeholder="E-mail address"
                         />
                         <Modal
                           trigger={
-                            <Button color="blue" fluid size="large">
+                            <Button color="blue" fluid size="large" onClick={() => this.generateSignUpForm()}>
                               Request Permission
                             </Button>
                           }
