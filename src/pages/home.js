@@ -39,7 +39,7 @@ class Home extends Component {
         >
           <Container>
             <div className="header-kata1">console.log("impactAlumni")</div>
-            <div className="header-kata2">Coding means community :)</div>
+            <div className="header-kata2">Impact Byte Alumni Community :)</div>
             <div>
               {" "}
               <Button
@@ -84,7 +84,8 @@ class Home extends Component {
                   <p
                     style={{
                       fontSize: "1.33em",
-                      fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+                      fontFamily: "Menlo, Monaco, 'Courier New', monospace",
+                      textAlign: "justify"
                     }}
                   >
                     Being part of a large, diverse group gives you many
@@ -135,7 +136,7 @@ class Home extends Component {
                     style={{
                       fontSize: "1.33em",
                       fontFamily: "Menlo, Monaco, 'Courier New', monospace",
-                      textAlign: "left"
+                      textAlign: "justify"
                     }}
                   >
                     One of our main purposes is to support a network of former
@@ -179,7 +180,7 @@ class Home extends Component {
         <Segment
           id="middle3"
           inverted="inverted"
-          textAlign="left"
+          textAlign="justify"
           style={{
             minHeight: 600,
             padding: "1em 0em"
@@ -224,7 +225,7 @@ class Home extends Component {
                     style={{
                       fontSize: "2em",
                       fontFamily: "Menlo, Monaco, 'Courier New', monospace",
-                      textAlign: "left"
+                      textAlign: "justify"
                     }}
                   >
                     Happiness is not something ready made. It comes from your
