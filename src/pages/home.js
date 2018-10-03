@@ -53,7 +53,7 @@ class Home extends Component {
                   fontFamily: "Menlo, Monaco, 'Courier New', monospace"
                 }}
                 as={Link}
-                to="/gallery"
+                to="/login"
                 primary
                 size="huge"
               >
