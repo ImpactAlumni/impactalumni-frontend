@@ -48,8 +48,8 @@ class Footer extends Component {
                   <List.Item
                     icon="instagram"
                     content={
-                      <a href="https://www.instagram.com/waysp/?hl=en">
-                        @waysp
+                      <a href="https://www.instagram.com/mwahyusp/?hl=en">
+                        @mwahyusp
                       </a>
                     }
                   />
